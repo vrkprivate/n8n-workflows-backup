@@ -81,11 +81,6 @@
             "index": 0,
             "node": "Angie, AI Assistant",
             "type": "main"
-          },
-          {
-            "index": 0,
-            "node": "Send a text message1",
-            "type": "main"
           }
         ]
       ]
@@ -99,13 +94,7 @@
             "type": "main"
           }
         ],
-        [
-          {
-            "index": 0,
-            "node": "Send a text message",
-            "type": "main"
-          }
-        ]
+        []
       ]
     },
     "Listen for incoming events": {
@@ -477,36 +466,6 @@
       "type": "n8n-nodes-base.gmailTool",
       "typeVersion": 2.2,
       "webhookId": "48dd8198-8fd5-4cfc-897c-72cbc15d319f"
-    },
-    {
-      "id": "c6604622-ab39-4a98-b25e-0848cbe893c7",
-      "name": "Send a text message",
-      "parameters": {
-        "additionalFields": {},
-        "text": "Done"
-      },
-      "position": [
-        -432,
-        336
-      ],
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "webhookId": "02233a0a-71cd-40b6-9966-8ac7da2dddcc"
-    },
-    {
-      "id": "983891e6-f126-4349-b1b3-39e1191534bc",
-      "name": "Send a text message1",
-      "parameters": {
-        "additionalFields": {},
-        "text": "Done twice"
-      },
-      "position": [
-        0,
-        272
-      ],
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "webhookId": "d2b8a949-db2f-47c9-9d18-a2c19f3a81da"
     }
   ],
   "pinData": {},
@@ -515,5 +474,5 @@
     "executionOrder": "v1"
   },
   "tags": [],
-  "versionId": "cdff018c-b67c-4298-b72e-0d54f9023d48"
+  "versionId": "1d001233-7d6e-4520-a435-85f8bc00515d"
 }

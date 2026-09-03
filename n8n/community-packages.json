@@ -1,1 +1,33 @@
-[]
+[
+  {
+    "authorEmail": "integrations@apify.com",
+    "authorName": "Apify Team",
+    "installedNodes": [
+      {
+        "latestVersion": 1,
+        "name": "Apify",
+        "type": "@apify/n8n-nodes-apify.apify"
+      },
+      {
+        "latestVersion": 1,
+        "name": "Apify Trigger",
+        "type": "@apify/n8n-nodes-apify.apifyTrigger"
+      }
+    ],
+    "installedVersion": "0.7.0",
+    "packageName": "@apify/n8n-nodes-apify"
+  },
+  {
+    "authorEmail": "leo@sideguide.dev",
+    "authorName": "Leonardo Grigorio",
+    "installedNodes": [
+      {
+        "latestVersion": 1,
+        "name": "Firecrawl",
+        "type": "@mendable/n8n-nodes-firecrawl.firecrawl"
+      }
+    ],
+    "installedVersion": "2.1.4",
+    "packageName": "@mendable/n8n-nodes-firecrawl"
+  }
+]

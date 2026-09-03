@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "columns": [
+      {
+        "createdAt": "2026-09-03T13:56:02.209Z",
+        "id": "cwD5md7Rx2kQVeZq",
+        "index": 0,
+        "name": "names",
+        "type": "string",
+        "updatedAt": "2026-09-03T13:56:02.209Z"
+      }
+    ],
+    "id": "Kb0V4wz4MQ5ofzC7",
+    "name": "Sample",
+    "projectId": "dB5XwiG04iZIahR1"
+  }
+]

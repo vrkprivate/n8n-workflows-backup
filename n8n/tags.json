@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "bAIp0KLEOWBky9nP",
+    "name": "Assistant"
+  },
+  {
+    "id": "dfrCBv1ZuqGo6pHs",
+    "name": "AV Generation"
+  },
+  {
+    "id": "DXHw6hXKImKbQV3Q",
+    "name": "Non AI"
+  },
+  {
+    "id": "hgZdJHaffTWFWLwJ",
+    "name": "Learning"
+  }
+]

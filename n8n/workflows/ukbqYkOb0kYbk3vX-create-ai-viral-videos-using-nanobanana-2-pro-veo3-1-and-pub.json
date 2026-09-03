@@ -1,0 +1,1064 @@
+{
+  "active": false,
+  "connections": {
+    "AI Agent: Generate Video Script": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Parse GPT Response",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Download Edited Image": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Set Master Prompt",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Download Video": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Send Video to Telegram",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Facebook": {
+      "main": [
+        [
+          {
+            "index": 2,
+            "node": "Merge1",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Generate Image Prompt": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "NanoBanana: Create Image",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Instagram": {
+      "main": [
+        [
+          {
+            "index": 3,
+            "node": "Merge1",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "LLM: OpenAI Chat": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "Generate Image Prompt",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "LLM: Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "index": 0,
+            "node": "Generate Image Prompt",
+            "type": "ai_outputParser"
+          }
+        ]
+      ]
+    },
+    "Linkedin": {
+      "main": [
+        [
+          {
+            "index": 1,
+            "node": "Merge1",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Send a text message",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "NanoBanana: Create Image": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Wait for Image Edit",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent: Generate Video Script",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "OpenAI Vision: Analyze Reference Image": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Generate Image Prompt",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Optimize Prompt for Veo": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Prepare Veo Request Body",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Parse GPT Response": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Optimize Prompt for Veo",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Prepare Veo Request Body": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Veo Generation",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Send Video to Telegram": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Upload Video to BLOTATO",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Set Master Prompt": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent: Generate Video Script",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Set: Bot Token (Placeholder)": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Telegram API: Get File URL",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent: Generate Video Script",
+            "type": "ai_outputParser"
+          }
+        ]
+      ]
+    },
+    "Telegram API: Get File URL": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "OpenAI Vision: Analyze Reference Image",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger: Receive Video Idea": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Set: Bot Token (Placeholder)",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent: Generate Video Script",
+            "type": "ai_tool"
+          }
+        ]
+      ]
+    },
+    "Tiktok": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Merge1",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Twitter (X)": {
+      "main": [
+        [
+          {
+            "index": 4,
+            "node": "Merge1",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Upload Video to BLOTATO": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Tiktok",
+            "type": "main"
+          },
+          {
+            "index": 0,
+            "node": "Linkedin",
+            "type": "main"
+          },
+          {
+            "index": 0,
+            "node": "Facebook",
+            "type": "main"
+          },
+          {
+            "index": 0,
+            "node": "Instagram",
+            "type": "main"
+          },
+          {
+            "index": 0,
+            "node": "Twitter (X)",
+            "type": "main"
+          },
+          {
+            "index": 0,
+            "node": "Youtube",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Veo Generation": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Wait",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Download Video",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Wait for Image Edit": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Download Edited Image",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Youtube": {
+      "main": [
+        [
+          {
+            "index": 5,
+            "node": "Merge1",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2026-09-03T12:37:15.986Z",
+  "id": "ukbqYkOb0kYbk3vX",
+  "isArchived": false,
+  "meta": null,
+  "name": "💥 Create AI Viral Videos using NanoBanana 2 PRO & VEO3.1 and Publish via Blotato -vide",
+  "nodeGroups": [],
+  "nodes": [
+    {
+      "id": "cd555bb6-3ec1-4947-882b-a42b89c5ec1c",
+      "name": "OpenAI Chat Model",
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "position": [
+        880,
+        736
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2
+    },
+    {
+      "id": "ec8228a3-e1e5-4975-9253-d6331ed6aef0",
+      "name": "Think",
+      "parameters": {},
+      "position": [
+        1024,
+        736
+      ],
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1
+    },
+    {
+      "id": "df550471-f29a-4d58-96de-dc25b02db125",
+      "name": "Structured Output Parser",
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"prompt\": \"string\",\n  \"caption\": \"string\",\n  \"title\": \"string\", \n  \"hashtags\": \"string\"\n}\n"
+      },
+      "position": [
+        1152,
+        736
+      ],
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3
+    },
+    {
+      "id": "4a9fd08e-c032-44aa-9e83-dcc5b495156b",
+      "name": "Telegram Trigger: Receive Video Idea",
+      "parameters": {
+        "additionalFields": {},
+        "updates": [
+          "message"
+        ]
+      },
+      "position": [
+        736,
+        96
+      ],
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "webhookId": "83b8d6e3-67b7-40f0-ba8c-b980fdcbe527"
+    },
+    {
+      "id": "dc9897d2-92ff-4095-8243-27eb547f4099",
+      "name": "Set Master Prompt",
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cc2e0500-57b1-4615-82cb-1c950e5f2ec4",
+              "name": "json_master",
+              "type": "string",
+              "value": "={\n  \"description\": \"Brief narrative description of the scene, focusing on key visual storytelling and product transformation.\",\n  \"style\": \"cinematic | photorealistic | stylized | gritty | elegant\",\n  \"camera\": {\n    \"type\": \"fixed | dolly | Steadicam | crane combo\",\n    \"movement\": \"describe any camera moves like slow push-in, pan, orbit\",\n    \"lens\": \"optional lens type or focal length for cinematic effect\"\n  },\n  \"lighting\": {\n    \"type\": \"natural | dramatic | high-contrast\",\n    \"sources\": \"key lighting sources (sunset, halogen, ambient glow...)\",\n    \"FX\": \"optional VFX elements like fog, reflections, flares\"\n  },\n  \"environment\": {\n    \"location\": \"describe location or room (kitchen, desert, basketball court...)\",\n    \"set_pieces\": [\n      \"list of key background or prop elements\",\n      \"e.g. hardwood floors, chain-link fence, velvet surface\"\n    ],\n    \"mood\": \"describe the ambient atmosphere (moody, clean, epic...)\"\n  },\n  \"elements\": [\n    \"main physical items involved (product box, accessories, vehicles...)\",\n    \"include brand visibility (logos, packaging, texture...)\"\n  ],\n  \"subject\": {\n    \"character\": {\n      \"description\": \"optional – physical description, outfit\",\n      \"pose\": \"optional – position or gesture\",\n      \"lip_sync_line\": \"optional – spoken line if there’s a voiceover\"\n    },\n    \"product\": {\n      \"brand\": \"Brand name\",\n      \"model\": \"Product model or name\",\n      \"action\": \"description of product transformation or assembly\"\n    }\n  },\n  \"motion\": {\n    \"type\": \"e.g. transformation, explosion, vortex\",\n    \"details\": \"step-by-step visual flow of how elements move or evolve\"\n  },\n  \"VFX\": {\n    \"transformation\": \"optional – describe style (neon trails, motion blur...)\",\n    \"impact\": \"optional – e.g. shockwave, glow, distortion\",\n    \"particles\": \"optional – embers, sparks, thread strands...\",\n    \"environment\": \"optional – VFX affecting the scene (ripples, wind...)\"\n  },\n  \"audio\": {\n    \"music\": \"optional – cinematic score, trap beat, ambient tone\",\n    \"sfx\": [\n      \"list of sound effects (zip, pop, woosh...)\"\n    ],\n    \"ambience\": \"optional – background soundscape (traffic, wind...)\",\n    \"voiceover\": {\n      \"delivery\": \"tone and style (confident, whisper, deep...)\",\n      \"line\": \"text spoken if applicable\"\n    }\n  },\n  \"ending\": \"Final shot description – what is seen or felt at the end (freeze frame, logo pulse, glow...)\",\n  \"text\": \"none | overlay | tagline | logo pulse at end only\",\n  \"format\": \"16:9 | 4k | vertical\",\n  \"keywords\": [\n    \"brand\",\n    \"scene style\",\n    \"motion type\",\n    \"camera style\",\n    \"sound mood\",\n    \"target theme\"\n  ]\n}\n"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "position": [
+        752,
+        544
+      ],
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4
+    },
+    {
+      "id": "6679471a-d66e-448a-a55f-223332831011",
+      "name": "AI Agent: Generate Video Script",
+      "parameters": {
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=system_prompt:\n  ## SYSTEM PROMPT: Structured Video Ad Prompt Generator\n  A - Ask:\n    Generate a structured video ad prompt for cinematic generation, strictly based on the master schema provided in: {{ $json.json_master }}.\n    The final result must be a JSON object with exactly 3 top-level keys: `prompt`, `caption`, `title` and `hashtags`.\n\n  G - Guidance:\n    role: Creative Director\n    output_count: 1\n    character_limit: None\n    constraints:\n      - The output must be valid JSON.\n      - The `prompt` field must contain a **single-line JSON string** that follows the exact structure of {{ $json.json_master }} with all fields preserved.\n      - The `hashtags` field must contain array of 8-10 tags.\n      - The `caption` field should contain a short, descriptive and unique title (max 15 words).\n      - The `title` field should contain a short title.\n      - Do not include any explanations, markdown, or extra text — only the JSON object.\n      - Escape all inner quotes in the `prompt` string so it is valid as a stringified JSON inside another JSON.\n    tool_usage:\n      - Ensure consistent alignment across all fields (camera, lighting, motion, etc.).\n      - Maintain full structure even for optional fields (use \"none\", \"\", or [] as needed).\n\n  N - Notation:\n    format: JSON\n    expected_output:\n      {\n        \"prompt\": \"{...stringified JSON of the full prompt...}\",\n        \"caption\": \"A unique short descriptive\",\n        \"title\": \"A unique short title\",\n        \"hashtags\": \"tags\"\n      }\n\n    Return JSON with: prompt (150-200 word cinematic Veo 3.1 description), caption (50-100 word social media text with emojis), hashtags (array of 8-10 tags)"
+        },
+        "promptType": "define",
+        "text": "=Create a UGC-style video prompt using both the reference image and the user description.  \n\n**Inputs**  \n- User description (optional):  \n  `{{ $('Telegram Trigger: Receive Video Idea').item.json.message.caption }}`  \n- Reference image analysis (stay strictly faithful to what’s visible):  \n  `{{ $('OpenAI Vision: Analyze Reference Image').item.json.content }}`  \n\n**Rules**  \n- Keep the style casual, authentic, and realistic. Avoid studio-like or cinematic language.  \n- Default model: `veo3.1` (unless otherwise specified).  \n- Output only **one JSON object** with the key: `video_prompt`.  \n"
+      },
+      "position": [
+        960,
+        544
+      ],
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2
+    },
+    {
+      "disabled": true,
+      "id": "7a9e410f-eed5-46df-be71-9de004537ed1",
+      "name": "Sticky Note2",
+      "parameters": {
+        "color": 7,
+        "content": "# 📑 STEP 2 — Generate Video with VEO3.1",
+        "height": 428,
+        "width": 1852
+      },
+      "position": [
+        672,
+        448
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "bf4d7967-3f0a-48f7-b70b-dacd48f08ae2",
+      "name": "Sticky Note",
+      "parameters": {
+        "color": 7,
+        "content": "# 📑 STEP 1 — Create Image with NanoBanana 2 PRO\n",
+        "height": 432,
+        "width": 1856
+      },
+      "position": [
+        672,
+        0
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "7828c26a-5741-4044-8bed-2f639ceff71b",
+      "name": "Set: Bot Token (Placeholder)",
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "af62651a-3fc8-419d-908b-6514f6f4bcb3",
+              "name": "YOUR_BOT_TOKEN",
+              "type": "string",
+              "value": "YOUR_BOT_TOKEN"
+            },
+            {
+              "id": "588b2c82-50af-41f1-bce2-0f7e627162b0",
+              "name": "fal_api_key",
+              "type": "string",
+              "value": "YOUR_fal_api_key"
+            },
+            {
+              "id": "bdb28513-38da-4a61-bffd-aa0f8a165579",
+              "name": "CAPTION",
+              "type": "string",
+              "value": "={{ $('Telegram Trigger: Receive Video Idea').item.json.message.caption }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "position": [
+        944,
+        96
+      ],
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4
+    },
+    {
+      "id": "d0aea344-3abc-4ddf-b8ce-4abeb6c87ee7",
+      "name": "Telegram API: Get File URL",
+      "parameters": {
+        "options": {},
+        "url": "=https://api.telegram.org/bot{{ $json.YOUR_BOT_TOKEN }}/getFile?file_id={{ $('Telegram Trigger: Receive Video Idea').item.json.message.photo[ $('Telegram Trigger: Receive Video Idea').item.json.message.photo.length - 1].file_id }}"
+      },
+      "position": [
+        1168,
+        96
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2
+    },
+    {
+      "id": "0f4d068f-8d7f-4934-83ce-21cf5952ca59",
+      "name": "OpenAI Vision: Analyze Reference Image",
+      "parameters": {
+        "imageUrls": "=https://api.telegram.org/file/bot{{ $('Set: Bot Token (Placeholder)').first().json.YOUR_BOT_TOKEN }}/{{ $json.result.file_path }}",
+        "modelId": {
+          "__rl": true,
+          "cachedResultName": "CHATGPT-4O-LATEST",
+          "mode": "list",
+          "value": "chatgpt-4o-latest"
+        },
+        "operation": "analyze",
+        "options": {},
+        "resource": "image",
+        "text": "=You are an image analysis assistant.\n\nYour task is to analyze the given image and output results **only in YAML format**. Do not add explanations, comments, or extra text outside YAML.\n\nRules:\n\n- If the image depicts a **product**, return:\n    \n    ```yaml\n    brand_name: (brand if visible or inferable)\n    color_scheme:\n      - hex: (hex code of each prominent color)\n        name: (descriptive name of the color)\n    font_style: (serif/sans-serif, bold/thin, etc.)\n    visual_description: (1–2 sentences summarizing what is seen, ignoring the background)\n    \n    ```\n    \n- If the image depicts a **character**, return:\n    \n    ```yaml\n    character_name: (name if visible or inferable, else \"unknown\")\n    color_scheme:\n      - hex: (hex code of each prominent color on the character)\n        name: (descriptive name of the color)\n    outfit_style: (clothing style, accessories, or notable features)\n    visual_description: (1–2 sentences summarizing what the character looks like, ignoring the background)\n    \n    ```\n    \n- If the image depicts **both**, return **both sections** in YAML.\n\nOnly output valid YAML. No explanations."
+      },
+      "position": [
+        1376,
+        96
+      ],
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8
+    },
+    {
+      "id": "caf7f457-2f48-44b4-b25b-811d4a42e521",
+      "name": "LLM: Structured Output Parser",
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"image_prompt\": \"string\"\n}"
+      },
+      "position": [
+        1776,
+        288
+      ],
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3
+    },
+    {
+      "id": "ea4a0767-5404-4f95-9f84-60eda3872868",
+      "name": "LLM: OpenAI Chat",
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "position": [
+        1552,
+        288
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2
+    },
+    {
+      "id": "f1d0b0ee-c824-4eb6-8aca-a9da4ea89a5b",
+      "name": "Generate Image Prompt",
+      "parameters": {
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=ROLE: UGC Image Prompt Builder  \n\nGOAL:  \nGenerate one concise, natural, and realistic image prompt (≤120 words) from a given product or reference image. The prompt must simulate authentic UGC (user-generated content) photography.  \n\nRULES:  \n- Always output **one JSON object only** with the key:  \n  - `image_prompt`: (string with full description)  \n- Do **not** add commentary, metadata, or extra keys. JSON only.  \n\nSTYLE GUIDELINES:  \n- Tone: casual, unstaged, lifelike, handheld snapshot.  \n- Camera cues: include at least 2–3 (e.g., phone snapshot, handheld framing, off-center composition, natural indoor light, soft shadows, slight motion blur, auto exposure, unpolished look, mild grain).  \n- Realism: embrace imperfections (wrinkles, stray hairs, skin texture, clutter, smudges).  \n- Packaging/Text: preserve exactly as visible. Never invent claims, numbers, or badges.  \n- Diversity: if people appear but are unspecified, vary gender/ethnicity naturally; default age range = 21–38.  \n- Setting: default to real-world everyday spaces (home, street, store, gym, office).  \n\nSAFETY:  \n- No copyrighted character names.  \n- No dialogue or scripts. Only describe scenes.  \n\nOUTPUT CONTRACT:  \n- JSON only, no prose outside.  \n- Max 120 words in `image_prompt`.  \n- Must cover: subject, action, mood, setting, style/camera, colors, and text accuracy.  \n\nCHECKLIST BEFORE OUTPUT:  \n- Natural handheld tone?  \n- At least 2 camera cues included?  \n- Product text preserved exactly?  \n- Only JSON returned?  \n\n---  \n\n### Example  \n\nGood Example :  \n```json\n{ \"image_prompt\": \"a young adult casually holding a skincare tube near a bathroom mirror; action: dabs small amount on the back of the hand; mood: easy morning; setting: small apartment bathroom with towel on rack and toothbrush cup; style/camera: phone snapshot, handheld framing, off-center composition, natural window light, slight motion blur, mild grain; colors: soft whites and mint label; text accuracy: keep every word on the tube exactly as visible, no added claims\" }\n"
+        },
+        "promptType": "define",
+        "text": "=Your task is to create an image prompt following the system guidelines.  \nEnsure that the reference image is represented as **accurately as possible**, including all text elements.  \n\nUse the following inputs:  \n\n- **User’s description:**  \n{{ $('Set: Bot Token (Placeholder)').first().json.CAPTION }}\n\n- **Reference image description:**  \n{{ $json.content }}\n"
+      },
+      "position": [
+        1600,
+        96
+      ],
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "597cbed8-1247-4479-9dd0-0f4bc087be69",
+      "name": "NanoBanana: Create Image",
+      "parameters": {
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "={{ 'Key ' + $('Set: Bot Token (Placeholder)').first().json.fal_api_key }}"
+            }
+          ]
+        },
+        "jsonBody": "={\n  \"prompt\": \"{{ $json.output.image_prompt.replace(/\\\"/g, '\\\\\\\"').replace(/\\n/g, '\\\\n') }}\",\n  \"image_urls\": [\n     \"https://api.telegram.org/file/bot{{ $('Set: Bot Token (Placeholder)').first().json.YOUR_BOT_TOKEN }}/{{ $('Telegram API: Get File URL').first().json.result.file_path }}\"\n  ],\n  \"resolution\": \"1K\",\n  \"aspect_ratio\": \"9:16\",\n  \"output_format\": \"png\"\n}\n",
+        "method": "POST",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        },
+        "sendBody": true,
+        "sendHeaders": true,
+        "specifyBody": "json",
+        "url": "https://queue.fal.run/fal-ai/nano-banana-pro/edit"
+      },
+      "position": [
+        1936,
+        96
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2
+    },
+    {
+      "id": "02cd27ec-6236-413a-931f-2bd3e69cb44c",
+      "name": "Wait for Image Edit",
+      "parameters": {
+        "amount": 2
+      },
+      "position": [
+        2144,
+        96
+      ],
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "webhookId": "40c00cdc-ee17-499f-9c6e-ca5438d5cfbb"
+    },
+    {
+      "id": "04946598-8735-4d57-9a86-7fe154090c14",
+      "name": "Download Edited Image",
+      "parameters": {
+        "options": {},
+        "url": "={{ $json.response_url }}"
+      },
+      "position": [
+        2352,
+        96
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2
+    },
+    {
+      "id": "7ac9534f-e06d-44fd-a97c-0ff7d740265f",
+      "name": "Parse GPT Response",
+      "parameters": {
+        "jsCode": "// Parse responses into { title, prompt, caption, hashtags[], hashtags_string }\nreturn $input.all().map(item => {\n  const data = item.json || {};\n\n  let title = \"\";\n  let prompt = \"\";\n  let caption = \"\";\n  let hashtagsArr = [];\n\n  // 1) NOUVEAU FORMAT : { output: { title, prompt, caption, hashtags } }\n  if (data.output) {\n    const o = data.output || {};\n    title = o.title ?? \"\";\n    prompt = o.prompt ?? \"\";\n    caption = o.caption ?? \"\";\n\n    const rawHashtags = o.hashtags ?? [];\n    if (Array.isArray(rawHashtags)) {\n      hashtagsArr = rawHashtags;\n    } else if (typeof rawHashtags === \"string\") {\n      try {\n        const parsedTags = JSON.parse(rawHashtags);\n        if (Array.isArray(parsedTags)) {\n          hashtagsArr = parsedTags;\n        } else {\n          hashtagsArr = rawHashtags.split(/[,\\s]+/).filter(Boolean);\n        }\n      } catch {\n        hashtagsArr = rawHashtags.split(/[,\\s]+/).filter(Boolean);\n      }\n    }\n  }\n\n  // 2) ANCIEN FORMAT OpenAI (fallback)\n  if (!title && !prompt && !caption && hashtagsArr.length === 0) {\n    let content =\n      data?.choices?.[0]?.message?.content ??\n      data?.message?.content ??\n      data?.content ??\n      null;\n\n    if (content && typeof content === \"object\") {\n      title = content.title ?? \"\";\n      prompt = content.prompt ?? \"\";\n      caption = content.caption ?? \"\";\n\n      if (Array.isArray(content.hashtags)) {\n        hashtagsArr = content.hashtags;\n      } else if (typeof content.hashtags === \"string\") {\n        hashtagsArr = content.hashtags.split(/[,\\s]+/).filter(Boolean);\n      }\n    }\n    else if (typeof content === \"string\" && content.trim()) {\n      try {\n        const parsed = JSON.parse(content);\n        title = parsed.title ?? \"\";\n        prompt = parsed.prompt ?? \"\";\n        caption = parsed.caption ?? \"\";\n\n        if (Array.isArray(parsed.hashtags)) {\n          hashtagsArr = parsed.hashtags;\n        } else if (typeof parsed.hashtags === \"string\") {\n          hashtagsArr = parsed.hashtags.split(/[,\\s]+/).filter(Boolean);\n        }\n      } catch {\n        title = \"\";\n        prompt = \"\";\n        caption = \"\";\n        hashtagsArr = [];\n      }\n    }\n  }\n\n  // 3) Normalisation des hashtags\n  const norm = Array.from(\n    new Set(\n      (hashtagsArr || [])\n        .map(h => (h ?? \"\").toString().trim())\n        .filter(Boolean)\n        .map(h => (h.startsWith(\"#\") ? h : `#${h}`))\n    )\n  );\n\n  const hashtags_string = norm.join(\" \");\n\n  return {\n    json: {\n      title,\n      prompt,\n      caption,\n      hashtags: norm,\n      hashtags_string\n    }\n  };\n});\n"
+      },
+      "position": [
+        1312,
+        544
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "id": "4bd29bcb-fe8c-44b9-a8c1-46fb7fd6162f",
+      "name": "Optimize Prompt for Veo",
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "veo_prompt",
+              "type": "string",
+              "value": "={{ $json.prompt }} consistent character throughout, photorealistic quality, professional cinematography, 8 seconds duration, 9:16 aspect ratio, 24fps"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "position": [
+        1520,
+        544
+      ],
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4
+    },
+    {
+      "id": "b3223605-36b1-4e80-bf67-d14b4686ede1",
+      "name": "Download Video",
+      "parameters": {
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        },
+        "url": "={{ $json.video.url }}"
+      },
+      "position": [
+        2352,
+        544
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2
+    },
+    {
+      "id": "ffd5852d-ec74-4838-b649-447763e8da4a",
+      "name": "Prepare Veo Request Body",
+      "parameters": {
+        "jsCode": "const prompt = $input.item.json.veo_prompt || $input.item.json.prompt;\n\n// Nouvelle source d'image : sortie de \"Download Edited Image\"\nconst imageUrl = $('Download Edited Image').first().json.images[0].url;\n\nif (!prompt || prompt.length < 10) {\n  throw new Error('Prompt required');\n}\n\nif (!imageUrl || typeof imageUrl !== 'string' || !imageUrl.startsWith('http')) {\n  throw new Error('A valid image URL from Download Edited Image is required');\n}\n\n// VEO attend un tableau d'URLs, même si on n'en a qu'une\nconst imageUrls = [imageUrl];\n\nreturn {\n  json: {\n    veo_request_body: {\n      prompt: prompt,\n      image_urls: imageUrls,\n      duration: 8,\n      aspect_ratio: \"9:16\"\n    },\n    ...($input.item.json)\n  }\n};\n"
+      },
+      "position": [
+        1728,
+        544
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "id": "a6b216a3-471e-4b00-81b9-7a11c39b098b",
+      "name": "Veo Generation",
+      "parameters": {
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "={{ 'Key ' + $('Set: Bot Token (Placeholder)').first().json.fal_api_key }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "jsonBody": "={{ JSON.stringify($json.veo_request_body) }}",
+        "method": "POST",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 600000
+        },
+        "sendBody": true,
+        "sendHeaders": true,
+        "specifyBody": "json",
+        "url": "https://fal.run/fal-ai/veo3.1/reference-to-video"
+      },
+      "position": [
+        1936,
+        544
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2
+    },
+    {
+      "id": "a5e7445c-33f0-456e-91a3-9f890cf28ecf",
+      "name": "Wait",
+      "parameters": {
+        "amount": 2
+      },
+      "position": [
+        2144,
+        544
+      ],
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "webhookId": "d08e597e-4696-4ad6-a068-a774daa84077"
+    },
+    {
+      "id": "02c22ac7-1ef5-4fea-8917-29e75c31f6cd",
+      "name": "Send Video to Telegram",
+      "parameters": {
+        "additionalFields": {
+          "caption": "=Your video is ready! 🎥  {{ $json.video.url }}"
+        },
+        "binaryData": true,
+        "chatId": "={{ $('Telegram Trigger: Receive Video Idea').first().json.message.chat.id }}",
+        "operation": "sendVideo"
+      },
+      "position": [
+        752,
+        1056
+      ],
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "webhookId": "f2ebfc81-f6ea-440e-8702-844ab3c6f244"
+    },
+    {
+      "id": "51c69932-bb07-4442-93c6-5d7c0c61d3b4",
+      "name": "Step 5 - Publishing",
+      "parameters": {
+        "color": 5,
+        "content": "# 📑 STEP 3  —  Publish with Blotato",
+        "height": 404,
+        "width": 1852
+      },
+      "position": [
+        672,
+        896
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "credentials": {},
+      "id": "819c0eda-a947-4381-84ce-e3b78d18f229",
+      "name": "Upload Video to BLOTATO",
+      "parameters": {
+        "mediaUrl": "={{ $('Download Video').item.json.video.url }}",
+        "resource": "media"
+      },
+      "position": [
+        1088,
+        1056
+      ],
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "typeVersion": 2
+    },
+    {
+      "credentials": {},
+      "id": "2af92a83-07ae-497c-9bd8-745bd613bddf",
+      "name": "Youtube",
+      "parameters": {
+        "accountId": {
+          "__rl": true,
+          "cachedResultName": "DR FIRASS (Dr. Firas)",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/8047",
+          "mode": "list",
+          "value": "8047"
+        },
+        "options": {},
+        "platform": "youtube",
+        "postContentMediaUrls": "={{ $json.url }}",
+        "postContentText": "={{ $('Parse GPT Response').first().json.caption }}",
+        "postCreateYoutubeOptionPrivacyStatus": "private",
+        "postCreateYoutubeOptionShouldNotifySubscribers": false,
+        "postCreateYoutubeOptionTitle": "={{ $('Parse GPT Response').first().json.title }}"
+      },
+      "position": [
+        1824,
+        1120
+      ],
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "typeVersion": 2
+    },
+    {
+      "credentials": {},
+      "id": "550dc17a-8a83-4b2c-a368-8da5bb1c410d",
+      "name": "Tiktok",
+      "parameters": {
+        "accountId": {
+          "__rl": true,
+          "cachedResultName": "elitecybzcs",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/2079",
+          "mode": "list",
+          "value": "2079"
+        },
+        "options": {},
+        "platform": "tiktok",
+        "postContentMediaUrls": "={{ $json.url }}",
+        "postContentText": "={{ $('Parse GPT Response').first().json.caption }}"
+      },
+      "position": [
+        1504,
+        960
+      ],
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "typeVersion": 2
+    },
+    {
+      "credentials": {},
+      "id": "0bef560b-a13f-4d29-af66-c01cb72eae77",
+      "name": "Linkedin",
+      "parameters": {
+        "accountId": {
+          "__rl": true,
+          "cachedResultName": "Samuel Amalric",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/1446",
+          "mode": "list",
+          "value": "1446"
+        },
+        "options": {},
+        "platform": "linkedin",
+        "postContentMediaUrls": "={{ $json.url }}",
+        "postContentText": "={{ $('Parse GPT Response').first().json.caption }}"
+      },
+      "position": [
+        1664,
+        960
+      ],
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "typeVersion": 2
+    },
+    {
+      "credentials": {},
+      "id": "6a31513e-6c42-4e7d-8696-df7f143714c5",
+      "name": "Facebook",
+      "parameters": {
+        "accountId": {
+          "__rl": true,
+          "cachedResultName": "Firass Ben",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/1759",
+          "mode": "list",
+          "value": "1759"
+        },
+        "facebookPageId": {
+          "__rl": true,
+          "cachedResultName": "Dr. Firas",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/1759/subaccounts/101603614680195",
+          "mode": "list",
+          "value": "101603614680195"
+        },
+        "options": {},
+        "platform": "facebook",
+        "postContentMediaUrls": "={{ $json.url }}",
+        "postContentText": "={{ $('Parse GPT Response').first().json.caption }}"
+      },
+      "position": [
+        1824,
+        960
+      ],
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "typeVersion": 2
+    },
+    {
+      "credentials": {},
+      "id": "05a7ae6f-71cf-4237-9616-49513e2613a3",
+      "name": "Instagram",
+      "parameters": {
+        "accountId": {
+          "__rl": true,
+          "cachedResultName": "acces.a.vie",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/1687",
+          "mode": "list",
+          "value": "1687"
+        },
+        "options": {},
+        "postContentMediaUrls": "={{ $json.url }}",
+        "postContentText": "={{ $('Parse GPT Response').first().json.caption }}"
+      },
+      "position": [
+        1504,
+        1120
+      ],
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "typeVersion": 2
+    },
+    {
+      "credentials": {},
+      "id": "d74b0e08-987a-4fcd-8e27-33f3ed3177ec",
+      "name": "Twitter (X)",
+      "parameters": {
+        "accountId": {
+          "__rl": true,
+          "cachedResultName": "Docteur_Firas",
+          "cachedResultUrl": "https://backend.blotato.com/v2/accounts/1289",
+          "mode": "list",
+          "value": "1289"
+        },
+        "options": {},
+        "platform": "twitter",
+        "postContentMediaUrls": "={{ $json.url }}",
+        "postContentText": "={{ $('Parse GPT Response').first().json.caption }}"
+      },
+      "position": [
+        1664,
+        1120
+      ],
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "typeVersion": 2
+    },
+    {
+      "id": "b71c18c2-1324-4833-bf8a-0df5bff6689f",
+      "name": "Merge1",
+      "parameters": {
+        "mode": "chooseBranch",
+        "numberInputs": 6
+      },
+      "position": [
+        2096,
+        976
+      ],
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2
+    },
+    {
+      "id": "2f42fdd4-027e-45a7-8ea7-954b5e0f7eff",
+      "name": "Send a text message",
+      "parameters": {
+        "additionalFields": {},
+        "chatId": "={{ $('Telegram Trigger: Receive Video Idea').first().json.message.chat.id }}",
+        "text": "Published"
+      },
+      "position": [
+        2320,
+        1040
+      ],
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "webhookId": "ba74ea20-4e1f-45e4-b95e-0c41b4394b56"
+    },
+    {
+      "id": "2da3cf12-7dd0-4dfa-8931-133c7196016c",
+      "name": "Sticky Note5",
+      "parameters": {
+        "content": "# 🚀 AI Viral Video Workflow — NanoBanana 2 PRO × VEO3.1 × Blotato (By Dr. Firas)\n\n[![AI Voice Agent Preview](https://www.dr-firas.com/nanobanana2.png)](https://youtu.be/nlwpbXQqNQ4)\n\n##  📘 Documentation  \nAccess detailed setup instructions, API config, platform connection guides, and workflow customization tips:\n\n📎 [Open the full documentation on Notion](https://automatisation.notion.site/NonoBanan-PRO-2-2b53d6550fd981a5acbecf7cf50aeb3c?source=copy_link)\n\nThis workflow converts a simple Telegram message into a **ready-to-publish AI viral video**, fully automated.\n\n## 🔥 What this workflow does\n### 1️⃣ Image Creation (NanoBanana 2 PRO)\n- User sends on Telegram:\n  - A reference image  \n  - A short text idea  \n### 2️⃣ Video Generation (VEO3.1)\n- An AI Agent builds a structured video prompt  \n- Optimizes it for **VEO3.1**  \n- Generates a vertical 9:16 video (8 seconds)  \n- Sends the final video to Telegram\n### 3️⃣ Multi-Platform Publishing (Blotato)\n- Uploads the video to Blotato  \n- Auto-publishes to\n\n## ⚙️ Requirements\n1. ✅ **Create a [Blotato](https://blotato.com/?ref=firas) account** (Pro plan required for API access)  \n2. 🔑 **Generate your Blotato API Key** via: `Settings > API > Generate API Key`  \n3. 📦 **Enable “Verified Community Nodes”** in the n8n admin settings  \n4. 🧩 **Install the Blotato** verified community node in n8n  \n5. 🛠 **Create a Blotato API credential** inside your n8n credentials tab  ",
+        "height": 1300,
+        "width": 652
+      },
+      "position": [
+        0,
+        0
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "binaryMode": "separate",
+    "executionOrder": "v1"
+  },
+  "tags": [],
+  "versionId": "435ca03e-6c6b-4e0c-a305-f9509effb6bc"
+}

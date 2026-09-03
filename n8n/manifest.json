@@ -5,11 +5,30 @@
       "hash": "b8572700cff994c329a6a788979226ce1e6f0637008bd8733caebd9fced055eb",
       "versionId": "3b53c3c4-2a84-45f5-856f-a65c4fa77123",
       "isArchived": false,
-      "lastChangedAt": "2026-09-03T11:53:51.260Z"
+      "lastChangedAt": "2026-09-03T11:53:51.260Z",
+      "hashVersion": 2
+    },
+    "Pn5PZEezIklsggaE": {
+      "name": "Jackie Assistant",
+      "hash": "64ef24381f3edc8bdd424a9f91a42a73fee2d61873956f43334f4219f339ee55",
+      "versionId": "48244528-c682-4f52-a64f-a90c91d4cb87",
+      "isArchived": false,
+      "lastChangedAt": "2026-09-03T13:12:56.281Z",
+      "hashVersion": 2
+    },
+    "ukbqYkOb0kYbk3vX": {
+      "name": "💥 Create AI Viral Videos using NanoBanana 2 PRO & VEO3.1 and Publish via Blotato -vide",
+      "hash": "3e3432584dc090b628b5a9864ec1266b0d95947b4add2d58ac543b3bf9b867ed",
+      "versionId": "435ca03e-6c6b-4e0c-a305-f9509effb6bc",
+      "isArchived": false,
+      "lastChangedAt": "2026-09-03T13:12:56.281Z",
+      "hashVersion": 2
     }
   },
   "knownWorkflowIds": [
-    "o4YHw4p7Akn7iECT"
+    "Pn5PZEezIklsggaE",
+    "o4YHw4p7Akn7iECT",
+    "ukbqYkOb0kYbk3vX"
   ],
   "instanceHost": "limiting-mart-doubt-cameron.trycloudflare.com",
   "complete": true,

@@ -1,0 +1,2692 @@
+{
+  "active": false,
+  "connections": {
+    "Airtable Approved Webhook": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Extract Payload",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Auto-Send Enabled?": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Send Reply via Unipile",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Classification Schema": {
+      "ai_outputParser": [
+        [
+          {
+            "index": 0,
+            "node": "Classify Message",
+            "type": "ai_outputParser"
+          }
+        ]
+      ]
+    },
+    "Classify Message": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Is Spam?",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Claude via OpenRouter": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "Generate RAG Reply",
+            "type": "ai_languageModel"
+          },
+          {
+            "index": 0,
+            "node": "Classify Message",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Extract & Normalize Fields",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Conversation Memory": {
+      "ai_memory": [
+        [
+          {
+            "index": 0,
+            "node": "Generate RAG Reply",
+            "type": "ai_memory"
+          },
+          {
+            "index": 0,
+            "node": "Classify Message",
+            "type": "ai_memory"
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "index": 0,
+            "node": "Pinecone Insert",
+            "type": "ai_document"
+          }
+        ]
+      ]
+    },
+    "Download File": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Pinecone Insert",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "index": 0,
+            "node": "Pinecone Insert",
+            "type": "ai_embedding"
+          }
+        ]
+      ]
+    },
+    "Extract & Normalize Fields": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Valid Inbound Message?",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Extract Payload": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Valid Approved Payload?",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Fetch Thread History": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Format Thread Context",
+            "type": "main"
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "node": "Log Fetch Error",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Format Thread Context": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Classify Message",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Generate RAG Reply": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Save Draft to Airtable",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Is Spam?": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Log Spam",
+            "type": "main"
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "node": "Generate RAG Reply",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Knowledge Base": {
+      "ai_tool": [
+        [
+          {
+            "index": 0,
+            "node": "Generate RAG Reply",
+            "type": "ai_tool"
+          }
+        ]
+      ]
+    },
+    "Mark Send Failed": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Log Send Error",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Pinecone Insert": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Log to KB Log",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Query Embeddings (Gemini)": {
+      "ai_embedding": [
+        [
+          {
+            "index": 0,
+            "node": "Knowledge Base",
+            "type": "ai_embedding"
+          }
+        ]
+      ]
+    },
+    "Save Draft to Airtable": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Auto-Send Enabled?",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Send Approved Reply via Unipile": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Update Draft Status Sent",
+            "type": "main"
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "node": "Mark Send Failed",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Send Reply via Unipile": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Update Draft Status Sent1",
+            "type": "main"
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "node": "Log Send Error1",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Token Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "index": 0,
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter"
+          }
+        ]
+      ]
+    },
+    "Unipile Inbox Webhook": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Config",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Valid Approved Payload?": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Send Approved Reply via Unipile",
+            "type": "main"
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "node": "Log Invalid Payload",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Valid Inbound Message?": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Fetch Thread History",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Watch KB Folder": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Download File",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2026-08-31T07:40:36.752Z",
+  "id": "ZgRyaivcdSm97CcU",
+  "isArchived": false,
+  "name": "All In One Unipile Linkedin Auto Reply",
+  "nodeGroups": [],
+  "nodes": [
+    {
+      "id": "203f7b38-3056-43c6-b7bc-3e056f021669",
+      "name": "Watch KB Folder",
+      "parameters": {
+        "event": "fileCreated",
+        "folderToWatch": {
+          "__rl": true,
+          "cachedResultName": "Linked Auto Reply Test Folder",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1NJtz6JJbL2hLDQdpufKpGdT5ayXIepXb",
+          "mode": "list",
+          "value": "1NJtz6JJbL2hLDQdpufKpGdT5ayXIepXb"
+        },
+        "options": {
+          "fileType": "all"
+        },
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder"
+      },
+      "position": [
+        112,
+        288
+      ],
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1
+    },
+    {
+      "id": "f1c2e315-af5a-4707-be67-6a66cd5bdb5d",
+      "name": "Download File",
+      "parameters": {
+        "fileId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.id }}"
+        },
+        "operation": "download",
+        "options": {
+          "binaryPropertyName": "data"
+        }
+      },
+      "position": [
+        432,
+        288
+      ],
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3
+    },
+    {
+      "id": "126ac333-9e37-4c4e-81d6-c134fa06f7bf",
+      "name": "Pinecone Insert",
+      "parameters": {
+        "mode": "insert",
+        "options": {
+          "pineconeNamespace": "company-kb"
+        },
+        "pineconeIndex": {
+          "__rl": true,
+          "mode": "list",
+          "value": "company-knowledge-base"
+        }
+      },
+      "position": [
+        736,
+        288
+      ],
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3
+    },
+    {
+      "id": "1db8f424-d425-4fab-9c28-a355ce7aaee3",
+      "name": "Default Data Loader",
+      "parameters": {
+        "dataType": "binary",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "filename",
+                "value": "={{ $('Watch KB Folder').item.json.name }}"
+              },
+              {
+                "name": "file_id",
+                "value": "={{ $('Watch KB Folder').item.json.id }}"
+              },
+              {
+                "name": "ingested_at",
+                "value": "={{ $now.toISO() }}"
+              }
+            ]
+          }
+        },
+        "textSplittingMode": "custom"
+      },
+      "position": [
+        912,
+        528
+      ],
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1
+    },
+    {
+      "id": "aa2c5c75-4a18-47e5-9b1e-6445a40f2d9a",
+      "name": "Token Splitter",
+      "parameters": {
+        "chunkOverlap": 50,
+        "chunkSize": 500
+      },
+      "position": [
+        928,
+        656
+      ],
+      "type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+      "typeVersion": 1
+    },
+    {
+      "executeOnce": true,
+      "id": "4810f0e7-6da4-462e-bcdf-d73c7119ae9f",
+      "name": "Log to KB Log",
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "cachedResultName": "LinkedIn RAG Bot",
+          "mode": "id",
+          "value": "appQvM6vBl23Vw171"
+        },
+        "columns": {
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false,
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "schema": [
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "filename",
+              "id": "filename",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "file_id",
+              "id": "file_id",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "chunks_upserted",
+              "id": "chunks_upserted",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "number"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "status",
+              "id": "status",
+              "options": [
+                {
+                  "name": "success",
+                  "value": "success"
+                },
+                {
+                  "name": "failed",
+                  "value": "failed"
+                },
+                {
+                  "name": "processing",
+                  "value": "processing"
+                }
+              ],
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "options"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "timestamp",
+              "id": "timestamp",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "dateTime"
+            }
+          ],
+          "value": {
+            "chunks_upserted": "={{ $input.all().length }}",
+            "file_id": "={{ $('Watch KB Folder').item.json.id }}",
+            "filename": "={{ $('Watch KB Folder').item.json.name }}",
+            "status": "success",
+            "timestamp": "={{ $now.toISO() }}"
+          }
+        },
+        "operation": "create",
+        "options": {},
+        "table": {
+          "__rl": true,
+          "cachedResultName": "KB Log",
+          "mode": "id",
+          "value": "tblhbTmLDXnkxVN0q"
+        }
+      },
+      "position": [
+        1120,
+        288
+      ],
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "dcc92d3b-04f5-4116-8c11-7cb770cfdda0",
+      "name": "Embeddings Google Gemini",
+      "parameters": {
+        "modelName": "models/gemini-embedding-2"
+      },
+      "position": [
+        688,
+        480
+      ],
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1
+    },
+    {
+      "id": "a7eaa883-f35e-4939-afc4-7873b7e0ea7f",
+      "name": "Overview - LinkedIn RAG Bot (Full System)",
+      "parameters": {
+        "content": "## LinkedIn Company Page RAG Bot — Full System (3 Workflows)\n\n### How it works\n1. Workflow 1 watches a Google Drive folder and automatically chunks, embeds, and indexes new documents into a Pinecone knowledge base.\n2. Workflow 2 receives incoming LinkedIn messages via a Unipile webhook, classifies each message's intent, and drafts a reply grounded in the Pinecone knowledge base.\n3. Every drafted reply is saved to Airtable, and either sent automatically or held for human approval depending on the autoSend toggle.\n4. Workflow 3 triggers when a human approves a pending draft in Airtable, sending the approved reply via Unipile and updating its status.\n5. All three workflows log errors to a shared Airtable Errors table for troubleshooting.\n\n### Setup steps\n- [ ] Reconnect the Google Drive credential (Workflow 1)\n- [ ] Reconnect the Unipile credential (all HTTP nodes currently return 401)\n- [ ] Replace the placeholder DSN (api1.unipile.com:13111) with your real Unipile DSN in Workflow 2 and Workflow 3's HTTP Request nodes\n- [ ] Create the Unipile webhook (source: messaging) pointing at Workflow 2's production URL once activated\n- [ ] Set up the Airtable \"Run a script\" automation on the Drafts table (trigger: status = approved) to call Workflow 3's webhook\n- [ ] Add your company name and description to Generate RAG Reply's system prompt (Workflow 2)\n- [ ] Confirm the Pinecone index dimensions match your Gemini embedding model output\n- [ ] Activate all three workflows once the above is complete\n\n### Customization\nFlip the autoSend field on Workflow 2's Config node to true once you trust the AI's replies, to skip human review and send automatically.",
+        "height": 920,
+        "width": 582
+      },
+      "position": [
+        -752,
+        992
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "9f99d041-9c1c-4cb2-8b3b-c8780d1e938d",
+      "name": "Group - Watch and download source file",
+      "parameters": {
+        "color": 7,
+        "content": "## Watch and download source file\n\nWatches the Google Drive folder for new or updated documents and downloads each one as binary data.",
+        "height": 372,
+        "width": 560
+      },
+      "position": [
+        48,
+        112
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "fa50db24-1cf3-47e3-a7c5-cf2d7d4f4321",
+      "name": "Group - Chunk, embed, and log to knowledge base",
+      "parameters": {
+        "color": 7,
+        "content": "## Chunk, embed, and log to knowledge base\n\nSplits the document into 500-token chunks (50 overlap), embeds them with Gemini, upserts into the Pinecone company-knowledge-base index (namespace: company-kb), then logs the result to Airtable KB Log.",
+        "height": 680,
+        "width": 644
+      },
+      "position": [
+        640,
+        112
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "9c1f26d9-a438-476a-ac9e-792ad46c3d8b",
+      "name": "Airtable Approved Webhook",
+      "parameters": {
+        "httpMethod": "POST",
+        "options": {},
+        "path": "airtable-approved-send"
+      },
+      "position": [
+        112,
+        2352
+      ],
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "webhookId": "e7f498e1-f67b-422b-b6c4-774fef7e79db"
+    },
+    {
+      "id": "6e76230d-6f28-4331-928b-0c0c4da62e5a",
+      "name": "Extract Payload",
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "record_id",
+              "name": "record_id",
+              "type": "string",
+              "value": "={{ $json.body?.record_id ?? $json.record_id }}"
+            },
+            {
+              "id": "chat_id",
+              "name": "chat_id",
+              "type": "string",
+              "value": "={{ $json.body?.chat_id ?? $json.chat_id }}"
+            },
+            {
+              "id": "ai_draft",
+              "name": "ai_draft",
+              "type": "string",
+              "value": "={{ $json.body?.ai_draft ?? $json.ai_draft }}"
+            },
+            {
+              "id": "status",
+              "name": "status",
+              "type": "string",
+              "value": "={{ $json.body?.status ?? $json.status }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "position": [
+        352,
+        2352
+      ],
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4
+    },
+    {
+      "id": "23c42d81-443f-4d38-a8e9-6dafaad7f37b",
+      "name": "Valid Approved Payload?",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "4dd291ed-c5b9-4cb4-9398-f23999706c96",
+              "leftValue": "={{ $json.record_id }}",
+              "operator": {
+                "operation": "notEmpty",
+                "singleValue": true,
+                "type": "string"
+              },
+              "rightValue": ""
+            },
+            {
+              "id": "0dc80ae1-a1e5-4aca-93b7-cbe0f5261890",
+              "leftValue": "={{ $json.chat_id }}",
+              "operator": {
+                "operation": "notEmpty",
+                "singleValue": true,
+                "type": "string"
+              },
+              "rightValue": ""
+            },
+            {
+              "id": "496d785a-2bf8-4ff0-905d-98bf3199fe3f",
+              "leftValue": "={{ $json.ai_draft }}",
+              "operator": {
+                "operation": "notEmpty",
+                "singleValue": true,
+                "type": "string"
+              },
+              "rightValue": ""
+            },
+            {
+              "id": "3bebce87-fd1e-46e8-8c5c-4148f2a9f1cd",
+              "leftValue": "={{ $json.status }}",
+              "operator": {
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": "approved"
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        576,
+        2352
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3
+    },
+    {
+      "id": "5b11ccfe-7469-4f75-a6af-850d7bff4f33",
+      "name": "Send Approved Reply via Unipile",
+      "onError": "continueErrorOutput",
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "={{ $json.ai_draft }}"
+            }
+          ]
+        },
+        "contentType": "multipart-form-data",
+        "method": "POST",
+        "nodeCredentialType": "unipileApi",
+        "options": {},
+        "sendBody": true,
+        "url": "=https://api1.unipile.com:13111/api/v1/chats/{{ $json.chat_id }}/messages"
+      },
+      "position": [
+        912,
+        2336
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4
+    },
+    {
+      "id": "93f022d7-7661-432d-8be3-9c68b19ee052",
+      "name": "Update Draft Status Sent",
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "cachedResultName": "LinkedIn RAG Bot",
+          "mode": "id",
+          "value": "appQvM6vBl23Vw171"
+        },
+        "columns": {
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false,
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "defaultMatch": true,
+              "display": true,
+              "displayName": "id",
+              "id": "id",
+              "readOnly": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sender_name",
+              "id": "sender_name",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sender_id",
+              "id": "sender_id",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "chat_id",
+              "id": "chat_id",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "category",
+              "id": "category",
+              "options": [
+                {
+                  "name": "LEAD",
+                  "value": "LEAD"
+                },
+                {
+                  "name": "SUPPORT",
+                  "value": "SUPPORT"
+                },
+                {
+                  "name": "PARTNERSHIP",
+                  "value": "PARTNERSHIP"
+                },
+                {
+                  "name": "RECRUITMENT",
+                  "value": "RECRUITMENT"
+                },
+                {
+                  "name": "OTHER",
+                  "value": "OTHER"
+                }
+              ],
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "options"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "confidence",
+              "id": "confidence",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "number"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "their_message",
+              "id": "their_message",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "ai_draft",
+              "id": "ai_draft",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "status",
+              "id": "status",
+              "options": [
+                {
+                  "name": "pending",
+                  "value": "pending"
+                },
+                {
+                  "name": "approved",
+                  "value": "approved"
+                },
+                {
+                  "name": "sent",
+                  "value": "sent"
+                },
+                {
+                  "name": "rejected",
+                  "value": "rejected"
+                },
+                {
+                  "name": "send_failed",
+                  "value": "send_failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "options"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "timestamp",
+              "id": "timestamp",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "dateTime"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sent_at",
+              "id": "sent_at",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "dateTime"
+            }
+          ],
+          "value": {
+            "id": "={{ $('Extract Payload').item.json.record_id }}",
+            "sent_at": "={{ $now.toISO() }}",
+            "status": "sent"
+          }
+        },
+        "operation": "update",
+        "options": {},
+        "table": {
+          "__rl": true,
+          "cachedResultName": "Drafts",
+          "mode": "id",
+          "value": "tblPkjkyXfsHq5aa5"
+        }
+      },
+      "position": [
+        1280,
+        2224
+      ],
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "a8c335fa-8fbe-434b-8601-dffe417de67f",
+      "name": "Mark Send Failed",
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "cachedResultName": "LinkedIn RAG Bot",
+          "mode": "id",
+          "value": "appQvM6vBl23Vw171"
+        },
+        "columns": {
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false,
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "defaultMatch": true,
+              "display": true,
+              "displayName": "id",
+              "id": "id",
+              "readOnly": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sender_name",
+              "id": "sender_name",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sender_id",
+              "id": "sender_id",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "chat_id",
+              "id": "chat_id",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "category",
+              "id": "category",
+              "options": [
+                {
+                  "name": "LEAD",
+                  "value": "LEAD"
+                },
+                {
+                  "name": "SUPPORT",
+                  "value": "SUPPORT"
+                },
+                {
+                  "name": "PARTNERSHIP",
+                  "value": "PARTNERSHIP"
+                },
+                {
+                  "name": "RECRUITMENT",
+                  "value": "RECRUITMENT"
+                },
+                {
+                  "name": "OTHER",
+                  "value": "OTHER"
+                }
+              ],
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "options"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "confidence",
+              "id": "confidence",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "number"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "their_message",
+              "id": "their_message",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "ai_draft",
+              "id": "ai_draft",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "status",
+              "id": "status",
+              "options": [
+                {
+                  "name": "pending",
+                  "value": "pending"
+                },
+                {
+                  "name": "approved",
+                  "value": "approved"
+                },
+                {
+                  "name": "sent",
+                  "value": "sent"
+                },
+                {
+                  "name": "rejected",
+                  "value": "rejected"
+                },
+                {
+                  "name": "send_failed",
+                  "value": "send_failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "options"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "timestamp",
+              "id": "timestamp",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "dateTime"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sent_at",
+              "id": "sent_at",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "dateTime"
+            }
+          ],
+          "value": {
+            "id": "={{ $('Extract Payload').item.json.record_id }}",
+            "status": "send_failed"
+          }
+        },
+        "operation": "update",
+        "options": {},
+        "table": {
+          "__rl": true,
+          "cachedResultName": "Drafts",
+          "mode": "id",
+          "value": "tblPkjkyXfsHq5aa5"
+        }
+      },
+      "position": [
+        1184,
+        2496
+      ],
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "efb2f481-d45f-4c8e-9abf-72675938d93c",
+      "name": "Log Send Error",
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "cachedResultName": "LinkedIn RAG Bot",
+          "mode": "id",
+          "value": "appQvM6vBl23Vw171"
+        },
+        "columns": {
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false,
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "schema": [
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "stage",
+              "id": "stage",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "chat_id",
+              "id": "chat_id",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "error_message",
+              "id": "error_message",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "timestamp",
+              "id": "timestamp",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "dateTime"
+            }
+          ],
+          "value": {
+            "chat_id": "={{ $('Extract Payload').item.json.chat_id }}",
+            "error_message": "={{ $json.error?.message ?? JSON.stringify($json.error) }}",
+            "stage": "Workflow 3 - Send Approved Reply",
+            "timestamp": "={{ $now.toISO() }}"
+          }
+        },
+        "operation": "create",
+        "options": {},
+        "table": {
+          "__rl": true,
+          "cachedResultName": "Errors",
+          "mode": "id",
+          "value": "tblNqamVByZhR3TBb"
+        }
+      },
+      "position": [
+        1360,
+        2496
+      ],
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "0f7a3227-e6cc-4c9d-bc48-aac761a84916",
+      "name": "Log Invalid Payload",
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "cachedResultName": "LinkedIn RAG Bot",
+          "mode": "id",
+          "value": "appQvM6vBl23Vw171"
+        },
+        "columns": {
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false,
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "schema": [
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "stage",
+              "id": "stage",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "chat_id",
+              "id": "chat_id",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "error_message",
+              "id": "error_message",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "timestamp",
+              "id": "timestamp",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "dateTime"
+            }
+          ],
+          "value": {
+            "chat_id": "={{ $json.chat_id || \"unknown\" }}",
+            "error_message": "={{ \"Invalid or incomplete payload received from Airtable automation: \" + JSON.stringify($json) }}",
+            "stage": "Workflow 3 - Validate Payload",
+            "timestamp": "={{ $now.toISO() }}"
+          }
+        },
+        "operation": "create",
+        "options": {},
+        "table": {
+          "__rl": true,
+          "cachedResultName": "Errors",
+          "mode": "id",
+          "value": "tblNqamVByZhR3TBb"
+        }
+      },
+      "position": [
+        912,
+        2576
+      ],
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "9eefc411-d332-4ead-bba1-863914a1aeb1",
+      "name": "Group - Receive and validate approval payload",
+      "parameters": {
+        "color": 7,
+        "content": "## Receive and validate approval payload\n\nReceives the webhook fired by Airtable's automation script when a draft is approved, extracts the payload fields, and validates that all required fields are present with status = approved. Invalid payloads are logged to Airtable (Log Invalid Payload sits just below this cluster).",
+        "height": 360,
+        "width": 740
+      },
+      "position": [
+        64,
+        2160
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "4ea5d936-e764-42b8-be83-0e54f298c7f3",
+      "name": "Group - Send the approved reply via Unipile",
+      "parameters": {
+        "color": 7,
+        "content": "## Send the approved reply via Unipile\n\nPosts the approved draft text to the LinkedIn conversation via Unipile's send-message endpoint.",
+        "height": 408,
+        "width": 266
+      },
+      "position": [
+        816,
+        2112
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "18df40cb-8467-415d-93f6-02d08646d0f7",
+      "name": "Group - Update or flag draft status",
+      "parameters": {
+        "color": 7,
+        "content": "## Update or flag draft status\n\nMarks the Airtable draft as sent on success, or as send_failed with an accompanying error log entry on failure.",
+        "height": 656,
+        "width": 460
+      },
+      "position": [
+        1104,
+        2032
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "1e7f9a8b-08c6-49f1-9671-4284cd4034fa",
+      "name": "Unipile Inbox Webhook",
+      "parameters": {
+        "httpMethod": "POST",
+        "options": {},
+        "path": "unipile-inbox"
+      },
+      "position": [
+        96,
+        1328
+      ],
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "webhookId": "500b26a5-445e-4198-94e8-55b9e5099bd8"
+    },
+    {
+      "id": "fdd4f4e4-895c-4426-9888-ce856298d1b1",
+      "name": "Config",
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "auto-send",
+              "name": "autoSend",
+              "type": "boolean",
+              "value": false
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "position": [
+        320,
+        1328
+      ],
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4
+    },
+    {
+      "id": "53097548-1ca5-4dcc-849d-ceb171c11e80",
+      "name": "Extract & Normalize Fields",
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "event",
+              "name": "event",
+              "type": "string",
+              "value": "={{ $json.body?.event ?? $json.event }}"
+            },
+            {
+              "id": "feature",
+              "name": "feature",
+              "type": "string",
+              "value": "={{ $json.body?.account_info?.feature ?? $json.account_info?.feature }}"
+            },
+            {
+              "id": "user_id",
+              "name": "user_id",
+              "type": "string",
+              "value": "={{ $json.body?.account_info?.user_id ?? $json.account_info?.user_id }}"
+            },
+            {
+              "id": "chat_id",
+              "name": "chat_id",
+              "type": "string",
+              "value": "={{ $json.body?.chat_id ?? $json.chat_id }}"
+            },
+            {
+              "id": "message_text",
+              "name": "message_text",
+              "type": "string",
+              "value": "={{ $json.body?.message ?? $json.message }}"
+            },
+            {
+              "id": "sender_id",
+              "name": "sender_id",
+              "type": "string",
+              "value": "={{ $json.body?.sender?.attendee_provider_id ?? $json.sender?.attendee_provider_id }}"
+            },
+            {
+              "id": "sender_name",
+              "name": "sender_name",
+              "type": "string",
+              "value": "={{ $json.body?.sender?.attendee_name ?? $json.sender?.attendee_name }}"
+            },
+            {
+              "id": "timestamp",
+              "name": "timestamp",
+              "type": "string",
+              "value": "={{ $json.body?.timestamp ?? $json.timestamp }}"
+            },
+            {
+              "id": "account_id",
+              "name": "account_id",
+              "type": "string",
+              "value": "={{ $json.body?.account_id ?? $json.account_id }}"
+            },
+            {
+              "id": "session_id",
+              "name": "session_id",
+              "type": "string",
+              "value": "={{ $json.body?.sender?.attendee_provider_id ?? $json.sender?.attendee_provider_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "position": [
+        544,
+        1328
+      ],
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4
+    },
+    {
+      "id": "c1526432-00aa-4372-9c84-1b8e02cd2e1d",
+      "name": "Valid Inbound Message?",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "ade8393e-f5ee-44a9-b83e-77a0a08603b8",
+              "leftValue": "={{ $json.event }}",
+              "operator": {
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": "message_received"
+            },
+            {
+              "id": "53602d50-e6d4-4f76-8adb-38b8edddaa60",
+              "leftValue": "={{ $json.feature }}",
+              "operator": {
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": "organization"
+            },
+            {
+              "id": "55142b00-4cf2-479d-8f7c-c7ff198e3f00",
+              "leftValue": "={{ $json.sender_id }}",
+              "operator": {
+                "operation": "notEquals",
+                "type": "string"
+              },
+              "rightValue": "={{ $json.user_id }}"
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        832,
+        1328
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3
+    },
+    {
+      "id": "f82f1fa6-7eb7-453c-bb8e-39849505ece5",
+      "name": "Fetch Thread History",
+      "onError": "continueErrorOutput",
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "unipileApi",
+        "options": {},
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "limit",
+              "value": "6"
+            }
+          ]
+        },
+        "sendQuery": true,
+        "url": "=https://api1.unipile.com:13111/api/v1/chats/{{ $json.chat_id }}/messages"
+      },
+      "position": [
+        1056,
+        1328
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4
+    },
+    {
+      "id": "53249403-6f42-4039-a248-3589043bb2ed",
+      "name": "Format Thread Context",
+      "parameters": {
+        "jsCode": "const raw = $input.first().json.items || $input.first().json || [];\nconst newestFirst = Array.isArray(raw) ? raw : [];\n// Unipile returns messages newest-first; reverse to chronological order (oldest -> newest)\nconst chronological = [...newestFirst].reverse();\n// Drop the newest message from the transcript since it's already surfaced separately\n// as \"message_text\" (the latest inbound message) - avoids duplicating it in the prompt\nconst priorMessages = chronological.slice(0, -1);\nconst lines = priorMessages.map((m) => {\n  const who = m.is_sender ? 'Page' : 'Them';\n  return who + ': ' + (m.text || '');\n});\nconst context = lines.length > 0 ? lines.join('\\n') : '(No prior messages - this is the start of the conversation.)';\nconst extract = $('Extract & Normalize Fields').first().json;\nreturn [{\n  json: {\n    context: context,\n    message_text: extract.message_text,\n    sender_name: extract.sender_name,\n    chat_id: extract.chat_id\n  },\n  pairedItem: { item: 0 }\n}];"
+      },
+      "position": [
+        1280,
+        1232
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "id": "39944676-faf5-414b-a03a-14a7c08590d6",
+      "name": "Claude via OpenRouter",
+      "parameters": {
+        "model": "openrouter/free",
+        "options": {}
+      },
+      "position": [
+        1504,
+        1456
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1
+    },
+    {
+      "id": "b1c11add-92f3-4588-858d-eb978512715f",
+      "name": "Conversation Memory",
+      "parameters": {
+        "contextWindowLength": 4,
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Extract & Normalize Fields').first().json.session_id }}"
+      },
+      "position": [
+        1632,
+        1456
+      ],
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4
+    },
+    {
+      "id": "66c1f753-c477-4e52-aff0-35d6ae78d27b",
+      "name": "Classification Schema",
+      "parameters": {
+        "jsonSchemaExample": "{ \"category\": \"LEAD\", \"confidence\": 0.95, \"reason\": \"Asked about pricing\" }"
+      },
+      "position": [
+        1760,
+        1456
+      ],
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3
+    },
+    {
+      "id": "47b0c93c-d41e-4856-b590-60ef5e11c919",
+      "name": "Is Spam?",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "e43bc4b2-c9b9-4cbd-a557-4405e2b2f238",
+              "leftValue": "={{ $json.output.category }}",
+              "operator": {
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": "SPAM"
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        1904,
+        1232
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3
+    },
+    {
+      "id": "12a5dc8e-8e71-470d-a0ee-a4485dd13c2c",
+      "name": "Log Spam",
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "cachedResultName": "LinkedIn RAG Bot",
+          "mode": "id",
+          "value": "appQvM6vBl23Vw171"
+        },
+        "columns": {
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false,
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "schema": [
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sender_name",
+              "id": "sender_name",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sender_id",
+              "id": "sender_id",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "their_message",
+              "id": "their_message",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "reason",
+              "id": "reason",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "timestamp",
+              "id": "timestamp",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "dateTime"
+            }
+          ],
+          "value": {
+            "reason": "={{ $json.output.reason }}",
+            "sender_id": "={{ $('Extract & Normalize Fields').first().json.sender_id }}",
+            "sender_name": "={{ $('Format Thread Context').first().json.sender_name }}",
+            "their_message": "={{ $('Format Thread Context').first().json.message_text }}",
+            "timestamp": "={{ $now.toISO() }}"
+          }
+        },
+        "operation": "create",
+        "options": {},
+        "table": {
+          "__rl": true,
+          "cachedResultName": "Spam",
+          "mode": "id",
+          "value": "tblv2pj2nzHVDgGBP"
+        }
+      },
+      "position": [
+        2272,
+        1024
+      ],
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "c0b2b414-5aa2-457e-8933-5abb5696cd6c",
+      "name": "Generate RAG Reply",
+      "parameters": {
+        "options": {
+          "systemMessage": "=You are the LinkedIn page assistant for our company. Search the knowledge base tool before every reply. Never invent pricing, features, or facts. If unsure, say a human will follow up shortly. Reply in the language the sender used. Keep replies to 3-5 sentences, LinkedIn inbox style. Message category: {{ $('Classify Message').item.json.output.category }} ({{ $('Classify Message').item.json.output.reason }})"
+        },
+        "promptType": "define",
+        "text": "=Conversation so far:\n{{ $('Format Thread Context').item.json.context }}\n\nLatest message from {{ $('Format Thread Context').item.json.sender_name }}: {{ $('Format Thread Context').item.json.message_text }}"
+      },
+      "position": [
+        2208,
+        1424
+      ],
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1
+    },
+    {
+      "id": "786b7d63-6afc-490e-a692-decac5ce3c6c",
+      "name": "Knowledge Base",
+      "parameters": {
+        "includeDocumentMetadata": false,
+        "mode": "retrieve-as-tool",
+        "options": {
+          "pineconeNamespace": "company-kb"
+        },
+        "pineconeIndex": {
+          "__rl": true,
+          "cachedResultName": "company-knowledge-base",
+          "mode": "list",
+          "value": "company-knowledge-base"
+        },
+        "toolDescription": "Search the company knowledge base for facts about products, pricing, features, and policies before answering a customer question."
+      },
+      "position": [
+        2240,
+        1600
+      ],
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3
+    },
+    {
+      "id": "2bc323c1-3fd2-4e2f-a008-53b26ee515a5",
+      "name": "Query Embeddings (Gemini)",
+      "parameters": {
+        "modelName": "models/gemini-embedding-2"
+      },
+      "position": [
+        2320,
+        1728
+      ],
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1
+    },
+    {
+      "id": "c6c8a093-99c6-4dae-9f43-7e2d3b5da28c",
+      "name": "Save Draft to Airtable",
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "cachedResultName": "LinkedIn RAG Bot",
+          "mode": "id",
+          "value": "appQvM6vBl23Vw171"
+        },
+        "columns": {
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false,
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "chat_id"
+          ],
+          "schema": [
+            {
+              "defaultMatch": true,
+              "display": true,
+              "displayName": "id",
+              "id": "id",
+              "readOnly": true,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sender_name",
+              "id": "sender_name",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sender_id",
+              "id": "sender_id",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "chat_id",
+              "id": "chat_id",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "category",
+              "id": "category",
+              "options": [
+                {
+                  "name": "LEAD",
+                  "value": "LEAD"
+                },
+                {
+                  "name": "SUPPORT",
+                  "value": "SUPPORT"
+                },
+                {
+                  "name": "PARTNERSHIP",
+                  "value": "PARTNERSHIP"
+                },
+                {
+                  "name": "RECRUITMENT",
+                  "value": "RECRUITMENT"
+                },
+                {
+                  "name": "OTHER",
+                  "value": "OTHER"
+                }
+              ],
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "options"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "confidence",
+              "id": "confidence",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "number"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "their_message",
+              "id": "their_message",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "ai_draft",
+              "id": "ai_draft",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "status",
+              "id": "status",
+              "options": [
+                {
+                  "name": "pending",
+                  "value": "pending"
+                },
+                {
+                  "name": "approved",
+                  "value": "approved"
+                },
+                {
+                  "name": "sent",
+                  "value": "sent"
+                },
+                {
+                  "name": "rejected",
+                  "value": "rejected"
+                },
+                {
+                  "name": "send_failed",
+                  "value": "send_failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "options"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "timestamp",
+              "id": "timestamp",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "dateTime"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sent_at",
+              "id": "sent_at",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "dateTime"
+            }
+          ],
+          "value": {
+            "ai_draft": "={{ $json.output }}",
+            "category": "={{ $('Classify Message').first().json.output.category }}",
+            "chat_id": "={{ $('Extract & Normalize Fields').first().json.chat_id }}",
+            "confidence": "={{ $('Classify Message').first().json.output.confidence }}",
+            "sender_id": "={{ $('Extract & Normalize Fields').first().json.sender_id }}",
+            "sender_name": "={{ $('Format Thread Context').first().json.sender_name }}",
+            "status": "pending",
+            "their_message": "={{ $('Format Thread Context').first().json.message_text }}",
+            "timestamp": "={{ $now.toISO() }}"
+          }
+        },
+        "operation": "upsert",
+        "options": {},
+        "table": {
+          "__rl": true,
+          "cachedResultName": "Drafts",
+          "mode": "id",
+          "value": "tblPkjkyXfsHq5aa5"
+        }
+      },
+      "position": [
+        2640,
+        1424
+      ],
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "82ca922b-6bce-4f2f-b118-442a280949d0",
+      "name": "Auto-Send Enabled?",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "leftValue": "={{ $('Config').item.json.autoSend }}",
+              "operator": {
+                "operation": "true",
+                "type": "boolean"
+              },
+              "rightValue": true
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        2880,
+        1424
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3
+    },
+    {
+      "id": "6a22b0ed-a5bb-4607-8ae0-132caf1e4121",
+      "name": "Send Reply via Unipile",
+      "onError": "continueErrorOutput",
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "={{ $('Generate RAG Reply').item.json.output }}"
+            }
+          ]
+        },
+        "contentType": "multipart-form-data",
+        "method": "POST",
+        "nodeCredentialType": "unipileApi",
+        "options": {},
+        "sendBody": true,
+        "url": "=https://api1.unipile.com:13111/api/v1/chats/{{ $('Extract & Normalize Fields').item.json.chat_id }}/messages"
+      },
+      "position": [
+        3184,
+        1440
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4
+    },
+    {
+      "id": "c93a4201-ad46-4a87-b773-e39ced75dd7a",
+      "name": "Log Fetch Error",
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "cachedResultName": "LinkedIn RAG Bot",
+          "mode": "id",
+          "value": "appQvM6vBl23Vw171"
+        },
+        "columns": {
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false,
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "schema": [
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "stage",
+              "id": "stage",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "chat_id",
+              "id": "chat_id",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "error_message",
+              "id": "error_message",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "timestamp",
+              "id": "timestamp",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "dateTime"
+            }
+          ],
+          "value": {
+            "chat_id": "={{ $('Extract & Normalize Fields').item.json.chat_id }}",
+            "error_message": "={{ $json.error?.message ?? JSON.stringify($json.error) }}",
+            "stage": "Fetch Thread History",
+            "timestamp": "={{ $now.toISO() }}"
+          }
+        },
+        "operation": "create",
+        "options": {},
+        "table": {
+          "__rl": true,
+          "cachedResultName": "Errors",
+          "mode": "id",
+          "value": "tblNqamVByZhR3TBb"
+        }
+      },
+      "position": [
+        1280,
+        1424
+      ],
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "be6db86a-dda0-426b-9ad0-3022e6d27abe",
+      "name": "Classify Message",
+      "parameters": {
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "Classify the latest LinkedIn message into exactly one category: LEAD (product, service, pricing, or demo interest), SUPPORT (existing customer needing help), PARTNERSHIP (business collaboration proposal), RECRUITMENT (job inquiry or recruiter outreach), SPAM (irrelevant, mass outreach, or bot), OTHER (anything else). Return the category, a confidence score between 0 and 1, and a short reason. Respond with JSON only."
+        },
+        "promptType": "define",
+        "text": "=Conversation so far:\n{{ $json.context }}\n\nLatest message from {{ $json.sender_name }}: {{ $json.message_text }}"
+      },
+      "position": [
+        1568,
+        1232
+      ],
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1
+    },
+    {
+      "id": "5f91922e-809c-4e13-88a5-da7fb50af6c2",
+      "name": "Group - Receive webhook and normalize payload",
+      "parameters": {
+        "color": 7,
+        "content": "## Receive webhook and normalize payload\n\nReceives the incoming LinkedIn message from Unipile, responds immediately, sets the auto-send config default, and extracts/normalizes the relevant fields from the webhook payload.",
+        "height": 392,
+        "width": 724
+      },
+      "position": [
+        32,
+        1136
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "b0c3725f-a4c3-444a-8123-3196e15755e4",
+      "name": "Group - Validate sender and fetch conversation history",
+      "parameters": {
+        "color": 7,
+        "content": "## Validate sender and fetch conversation history\n\nFilters for genuine inbound company-page messages (not spam, not self-sent), then fetches the last 6 messages and formats them into a chronological transcript. Fetch errors are logged to Airtable.",
+        "height": 524,
+        "width": 680
+      },
+      "position": [
+        784,
+        1072
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "1def3d77-0fd4-429d-9943-0c70cc42479e",
+      "name": "Group - Classify message and check for spam",
+      "parameters": {
+        "color": 7,
+        "content": "## Classify message and check for spam\n\nClassifies the message's intent (LEAD/SUPPORT/PARTNERSHIP/RECRUITMENT/SPAM/OTHER) using Claude via OpenRouter with shared session memory, then routes spam messages to a dedicated Airtable log (Log Spam sits just to the right, sharing this cluster).",
+        "height": 680,
+        "width": 632
+      },
+      "position": [
+        1488,
+        992
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "2d72c05f-6079-4330-ae2e-d93cdbfb5877",
+      "name": "Group - Generate grounded reply via Pinecone",
+      "parameters": {
+        "color": 7,
+        "content": "## Generate grounded reply via Pinecone\n\nGenerates the reply using the same shared Claude model and session memory from classification, grounding every answer in the Pinecone knowledge base via a retrieval tool with matching Gemini embeddings.",
+        "height": 696,
+        "width": 420
+      },
+      "position": [
+        2144,
+        1184
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "25f9d4ee-e123-45f3-b3cd-328ef9dc8d79",
+      "name": "Group - Save draft and check auto-send toggle",
+      "parameters": {
+        "color": 7,
+        "content": "## Save draft and check auto-send toggle\n\nUpserts the AI draft into Airtable Drafts (matched by chat_id, so a conversation updates in place instead of duplicating) and checks the workflow's auto-send configuration.",
+        "height": 412,
+        "width": 460
+      },
+      "position": [
+        2576,
+        1200
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "4078e937-79dd-4912-9011-f602d7c017f1",
+      "name": "Group - Send approved reply and log outcome",
+      "parameters": {
+        "color": 7,
+        "content": "## Send approved reply and log outcome\n\nSends the reply via Unipile when auto-send is on, then marks the draft sent or logs a send error to Airtable.",
+        "height": 484,
+        "width": 558
+      },
+      "position": [
+        3056,
+        1200
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "e17c1e71-f006-4793-aabc-d3cafe9d5e61",
+      "name": "Update Draft Status Sent1",
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "cachedResultName": "LinkedIn RAG Bot",
+          "mode": "id",
+          "value": "appQvM6vBl23Vw171"
+        },
+        "columns": {
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false,
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "chat_id"
+          ],
+          "schema": [
+            {
+              "defaultMatch": true,
+              "display": true,
+              "displayName": "id",
+              "id": "id",
+              "readOnly": true,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sender_name",
+              "id": "sender_name",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sender_id",
+              "id": "sender_id",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "chat_id",
+              "id": "chat_id",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "category",
+              "id": "category",
+              "options": [
+                {
+                  "name": "LEAD",
+                  "value": "LEAD"
+                },
+                {
+                  "name": "SUPPORT",
+                  "value": "SUPPORT"
+                },
+                {
+                  "name": "PARTNERSHIP",
+                  "value": "PARTNERSHIP"
+                },
+                {
+                  "name": "RECRUITMENT",
+                  "value": "RECRUITMENT"
+                },
+                {
+                  "name": "OTHER",
+                  "value": "OTHER"
+                }
+              ],
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "options"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "confidence",
+              "id": "confidence",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "number"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "their_message",
+              "id": "their_message",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "ai_draft",
+              "id": "ai_draft",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "status",
+              "id": "status",
+              "options": [
+                {
+                  "name": "pending",
+                  "value": "pending"
+                },
+                {
+                  "name": "approved",
+                  "value": "approved"
+                },
+                {
+                  "name": "sent",
+                  "value": "sent"
+                },
+                {
+                  "name": "rejected",
+                  "value": "rejected"
+                },
+                {
+                  "name": "send_failed",
+                  "value": "send_failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "options"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "timestamp",
+              "id": "timestamp",
+              "readOnly": false,
+              "removed": true,
+              "required": false,
+              "type": "dateTime"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "sent_at",
+              "id": "sent_at",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "dateTime"
+            }
+          ],
+          "value": {
+            "chat_id": "={{ $('Extract & Normalize Fields').item.json.chat_id }}",
+            "sent_at": "={{ $now.toISO() }}",
+            "status": "sent"
+          }
+        },
+        "operation": "update",
+        "options": {},
+        "table": {
+          "__rl": true,
+          "cachedResultName": "Drafts",
+          "mode": "id",
+          "value": "tblPkjkyXfsHq5aa5"
+        }
+      },
+      "position": [
+        3424,
+        1328
+      ],
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "947f1546-65e0-4672-aa94-5c577ef4ec74",
+      "name": "Log Send Error1",
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "cachedResultName": "LinkedIn RAG Bot",
+          "mode": "id",
+          "value": "appQvM6vBl23Vw171"
+        },
+        "columns": {
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false,
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "schema": [
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "stage",
+              "id": "stage",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "chat_id",
+              "id": "chat_id",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "error_message",
+              "id": "error_message",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "string"
+            },
+            {
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
+              "displayName": "timestamp",
+              "id": "timestamp",
+              "readOnly": false,
+              "removed": false,
+              "required": false,
+              "type": "dateTime"
+            }
+          ],
+          "value": {
+            "chat_id": "={{ $('Extract & Normalize Fields').first().json.chat_id }}",
+            "error_message": "={{ $json.error?.message ?? JSON.stringify($json.error) }}",
+            "stage": "Send Reply",
+            "timestamp": "={{ $now.toISO() }}"
+          }
+        },
+        "operation": "create",
+        "options": {},
+        "table": {
+          "__rl": true,
+          "cachedResultName": "Errors",
+          "mode": "id",
+          "value": "tblNqamVByZhR3TBb"
+        }
+      },
+      "position": [
+        3424,
+        1520
+      ],
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "612ad8f1-a608-4e03-bbc0-bccfaa05906a",
+      "name": "Sticky Note",
+      "parameters": {
+        "color": 2,
+        "content": "# Workflow 1 — Knowledge Base Ingestion Pipeline",
+        "height": 864,
+        "width": 1328
+      },
+      "position": [
+        0,
+        0
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "46622f47-7676-4708-b58a-0e7526956314",
+      "name": "Sticky Note1",
+      "parameters": {
+        "color": 2,
+        "content": "# Workflow 2 — Company Page Inbox Monitor + RAG Bot",
+        "height": 1040,
+        "width": 3696
+      },
+      "position": [
+        -128,
+        928
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "8d73109f-34a7-4293-80d3-1fea9d631dfc",
+      "name": "Sticky Note2",
+      "parameters": {
+        "color": 2,
+        "content": "# Workflow 3 - Human-Approved Send",
+        "height": 768,
+        "width": 1616
+      },
+      "position": [
+        0,
+        1984
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {
+    "Airtable Approved Webhook": [
+      {
+        "json": {
+          "body": {
+            "ai_draft": "Thanks for reaching out! Our Pro plan starts at $49/month and includes all core features. Would you like me to set up a quick demo call?",
+            "chat_id": "R8J-xM9WX7eoHLp6gSVtWQ",
+            "record_id": "recDraftAB12345Xy",
+            "status": "approved"
+          },
+          "headers": {
+            "content-length": "187",
+            "content-type": "application/json",
+            "host": "n8n.salmanpro.me",
+            "user-agent": "node-fetch"
+          },
+          "params": {},
+          "query": {}
+        }
+      }
+    ]
+  },
+  "settings": {
+    "binaryMode": "separate",
+    "executionOrder": "v1"
+  },
+  "tags": [],
+  "versionId": "a203394e-49cc-42c6-b031-8d39db2dd0cc"
+}

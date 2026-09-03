@@ -1,0 +1,624 @@
+{
+  "active": false,
+  "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Telegram",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Create a task in Google Tasks": {
+      "ai_tool": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_tool"
+          }
+        ]
+      ]
+    },
+    "Get Email": {
+      "ai_tool": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_tool"
+          }
+        ]
+      ]
+    },
+    "Get Voice File": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Transcribe a recording1",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Get many tasks in Google Tasks": {
+      "ai_tool": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_tool"
+          }
+        ]
+      ]
+    },
+    "Google Calendar": {
+      "ai_tool": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_tool"
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Get Voice File",
+            "type": "main"
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Listen for incoming events": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Voice or Text",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "OpenRouter": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "ai_tool": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_tool"
+          }
+        ]
+      ]
+    },
+    "Transcribe a recording1": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Voice or Text": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "If",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_memory"
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2026-08-31T08:06:16.278Z",
+  "id": "2rMfKxo4DXeApZj1",
+  "isArchived": false,
+  "name": "Personal Assistant",
+  "nodeGroups": [],
+  "nodes": [
+    {
+      "id": "756460c6-4dc8-483b-b819-09f378382a17",
+      "name": "Google Calendar",
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "mode": "id",
+          "value": "=<insert email here>"
+        },
+        "operation": "getAll",
+        "options": {
+          "fields": "=items(summary, start(dateTime))",
+          "timeMax": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Before', ``, 'string') }}",
+          "timeMin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('After', ``, 'string') }}"
+        }
+      },
+      "position": [
+        3008,
+        528
+      ],
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.1
+    },
+    {
+      "id": "921dc8ee-876f-4a7d-84f1-f08ea55051c6",
+      "name": "Window Buffer Memory",
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Listen for incoming events').first().json.message.from.id }}"
+      },
+      "position": [
+        1792,
+        528
+      ],
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.2
+    },
+    {
+      "id": "40c2f555-ba5d-4839-93f3-f8e5ede3d7a9",
+      "name": "Get Email",
+      "parameters": {
+        "filters": {
+          "labelIds": [
+            "INBOX"
+          ],
+          "readStatus": "unread",
+          "receivedAfter": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Received_After', ``, 'string') }}",
+          "receivedBefore": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Received_Before', ``, 'string') }}"
+        },
+        "limit": 20,
+        "operation": "getAll"
+      },
+      "position": [
+        2576,
+        528
+      ],
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "webhookId": "a4ae7b5d-7686-4bee-a753-848932860b4e"
+    },
+    {
+      "id": "2c817ef1-5f95-4188-87e3-d4590863d76a",
+      "name": "Listen for incoming events",
+      "parameters": {
+        "additionalFields": {},
+        "updates": [
+          "message"
+        ]
+      },
+      "position": [
+        656,
+        176
+      ],
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "webhookId": "322dce18-f93e-4f86-b9b1-3305519b7834"
+    },
+    {
+      "id": "1b82f536-22ad-40ff-98f4-0eff3019f91e",
+      "name": "Telegram",
+      "onError": "continueErrorOutput",
+      "parameters": {
+        "additionalFields": {
+          "appendAttribution": false,
+          "parse_mode": "Markdown"
+        },
+        "chatId": "={{ $('Listen for incoming events').first().json.message.from.id }}",
+        "text": "={{ $json.output }}"
+      },
+      "position": [
+        2464,
+        160
+      ],
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.1,
+      "webhookId": "2c133a40-af48-4106-bc1a-be6047840a89"
+    },
+    {
+      "id": "be3ecd35-cde6-40d4-9768-4f689dad4e93",
+      "name": "If",
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "a0bf9719-4272-46f6-ab3b-eda6f7b44fd8",
+              "leftValue": "={{ $json.message.text }}",
+              "operator": {
+                "operation": "empty",
+                "singleValue": true,
+                "type": "string"
+              },
+              "rightValue": ""
+            }
+          ],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          }
+        },
+        "options": {}
+      },
+      "position": [
+        1104,
+        176
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2
+    },
+    {
+      "id": "ea348abc-604a-4cc2-8865-4bc6ead83185",
+      "name": "Voice or Text",
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "text",
+              "stringValue": "={{ $json?.message?.text || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "position": [
+        880,
+        176
+      ],
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2
+    },
+    {
+      "id": "79755808-0a2a-469d-b037-d0f3ab8f5f8a",
+      "name": "Get Voice File",
+      "parameters": {
+        "additionalFields": {},
+        "fileId": "={{ $('Listen for incoming events').item.json.message.voice.file_id }}",
+        "resource": "file"
+      },
+      "position": [
+        1328,
+        96
+      ],
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.1,
+      "webhookId": "ef3f120e-c212-45ff-99b5-b6a5a82598d8"
+    },
+    {
+      "id": "9553d20d-b43f-4090-9bd9-cf00c004768b",
+      "name": "Sticky Note",
+      "parameters": {
+        "color": 7,
+        "content": "## Process Telegram Request\n",
+        "height": 279,
+        "width": 624
+      },
+      "position": [
+        848,
+        64
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "cid": "Ikx1Y2FzIFBleXJpbiI",
+      "creator": "Lucas Peyrin",
+      "id": "abf42a03-4c81-4c05-9518-3ace576834b0",
+      "name": "Sticky Note1",
+      "notes": "© 2025 Lucas Peyrin",
+      "parameters": {
+        "color": 3,
+        "content": "\n\n\n\n\n\n\n\n\n\n\n\n1. [In OpenRouter](https://openrouter.ai/settings/keys) click **“Create API key”** and copy it.\n\n2. Open the ```OpenRouter``` node:\n   * **Select Credential → Create New**\n   * Paste into **API Key** and **Save**\n",
+        "height": 316,
+        "width": 294
+      },
+      "position": [
+        1360,
+        480
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "2261fc1f-3e0f-4e04-b52c-78a9ad5ad37a",
+      "name": "OpenRouter",
+      "parameters": {
+        "options": {}
+      },
+      "position": [
+        1456,
+        512
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1
+    },
+    {
+      "cid": "Ikx1Y2FzIFBleXJpbiI",
+      "creator": "Lucas Peyrin",
+      "id": "63a59270-da80-4605-8a3d-9ed1eea927d3",
+      "name": "Sticky Note15",
+      "notes": "© 2025 Lucas Peyrin",
+      "parameters": {
+        "color": 7,
+        "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis node helps your agent remember the last few messages to stay on topic.",
+        "height": 260,
+        "width": 308
+      },
+      "position": [
+        1680,
+        480
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "cid": "Ikx1Y2FzIFBleXJpbiI",
+      "creator": "Lucas Peyrin",
+      "id": "4af29b94-fdbc-44c5-8b58-49bb531f4957",
+      "name": "Sticky Note16",
+      "notes": "© 2025 Lucas Peyrin",
+      "parameters": {
+        "color": 7,
+        "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis node allows your agent create and get tasks from Google Tasks\n",
+        "height": 260,
+        "width": 484
+      },
+      "position": [
+        2016,
+        480
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "cid": "Ikx1Y2FzIFBleXJpbiI",
+      "creator": "Lucas Peyrin",
+      "id": "b5a10c47-47e2-4d43-b766-e704631fc935",
+      "name": "Sticky Note18",
+      "notes": "© 2025 Lucas Peyrin",
+      "parameters": {
+        "color": 7,
+        "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis node allows your agent access your gmail\n",
+        "height": 260,
+        "width": 308
+      },
+      "position": [
+        2528,
+        480
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "cid": "Ikx1Y2FzIFBleXJpbiI",
+      "creator": "Lucas Peyrin",
+      "id": "97c9ffde-07b2-4904-a9d5-c23cb7708a7e",
+      "name": "Sticky Note19",
+      "notes": "© 2025 Lucas Peyrin",
+      "parameters": {
+        "color": 7,
+        "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis node allows your agent access your Google calendar\n",
+        "height": 260,
+        "width": 404
+      },
+      "position": [
+        2864,
+        480
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "cid": "Ikx1Y2FzIFBleXJpbiI",
+      "creator": "Lucas Peyrin",
+      "id": "2ae90121-1fbc-4ab4-a96c-07dd21c92b10",
+      "name": "Sticky Note20",
+      "notes": "© 2025 Lucas Peyrin",
+      "parameters": {
+        "color": 7,
+        "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUses OpenAI to convert voice to text.\n[In OpenAI](https://platform.openai.com/api-keys) click **“Create new secret key”** and copy it.",
+        "height": 276,
+        "width": 324
+      },
+      "position": [
+        1536,
+        64
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "cid": "Ikx1Y2FzIFBleXJpbiI",
+      "creator": "Lucas Peyrin",
+      "id": "74fb618a-ecce-46b4-83ab-0fe624a796e6",
+      "name": "Sticky Note13",
+      "notes": "© 2025 Lucas Peyrin",
+      "parameters": {
+        "color": 7,
+        "content": "Caylee, your peronal AI Assistant:\n1. Get email\n2. Check calendar\n3. Get and create to-do tasks \n\nEdit the **System Message** to adjust your agent’s thinking, behavior, and replies.\n\n\n\n\n\n\n\n\n\n\n",
+        "height": 380,
+        "width": 396
+      },
+      "position": [
+        1920,
+        -32
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "bd96502c-63ec-459c-b436-a8a8990edabb",
+      "name": "Sticky Note3",
+      "parameters": {
+        "color": 4,
+        "content": "# Try It Out!\n\nLaunch Jackie—your personal AI assistant that handles voice & text via Telegram to manage your digital life.\n\n**To get started:**\n\n1. **Connect all credentials** (Telegram, OpenAI, Gmail, etc.)\n2. **Activate the workflow** and message your Telegram bot:\n   • \"What emails do I have today?\"\n   • \"Show me my calendar for tomorrow\"\n   • \"Craete new to-do item\"\n   • 🎤 Send voice messages for hands-free interaction\n\n## Questions or Need Help?\n\nFor setup assistance, customization, or workflow support, join my Skool community!\n\n### [AI Automation Engineering Community](https://www.skool.com/ai-automation-engineering-3014)\n\nHappy learning! -- Derek Cheung\n",
+        "height": 568,
+        "width": 460
+      },
+      "position": [
+        144,
+        -64
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "f71e7870-c86e-4b77-ac17-e389c2516499",
+      "name": "Sticky Note4",
+      "parameters": {
+        "color": 7,
+        "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSend message back to Telegram\n",
+        "height": 288,
+        "width": 304
+      },
+      "position": [
+        2368,
+        64
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "662d750a-bbe9-4158-b4f0-01a01c3b9db0",
+      "name": "Create a task in Google Tasks",
+      "parameters": {
+        "additionalFields": {},
+        "task": "MTY1MTc5NzMxMzA5NDc5MTQ5NzQ6MDow",
+        "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Title', ``, 'string') }}"
+      },
+      "position": [
+        2112,
+        544
+      ],
+      "type": "n8n-nodes-base.googleTasksTool",
+      "typeVersion": 1
+    },
+    {
+      "id": "4decfca3-159f-4f4c-9030-321fffc179f9",
+      "name": "Get many tasks in Google Tasks",
+      "parameters": {
+        "additionalFields": {},
+        "operation": "getAll",
+        "task": "MTY1MTc5NzMxMzA5NDc5MTQ5NzQ6MDow"
+      },
+      "position": [
+        2304,
+        544
+      ],
+      "type": "n8n-nodes-base.googleTasksTool",
+      "typeVersion": 1
+    },
+    {
+      "id": "c2efeb55-3f14-4679-8508-f4268f7313bd",
+      "name": "Sticky Note2",
+      "parameters": {
+        "color": 7,
+        "content": "## [Video Tutorial](https://youtu.be/ROgf5dVqYPQ)\n@[youtube](ROgf5dVqYPQ)",
+        "height": 400,
+        "width": 544
+      },
+      "position": [
+        2720,
+        -48
+      ],
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1
+    },
+    {
+      "id": "6b8bbede-42a6-4d3a-8204-3268976d4014",
+      "name": "Send Email",
+      "parameters": {
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', `Please format this nicely in html`, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        },
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}"
+      },
+      "position": [
+        2720,
+        528
+      ],
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "webhookId": "a4ae7b5d-7686-4bee-a753-848932860b4e"
+    },
+    {
+      "id": "8ebd76dd-0e76-4a21-9348-ca6ad260a5c4",
+      "name": "AI Agent",
+      "parameters": {
+        "options": {}
+      },
+      "position": [
+        2000,
+        208
+      ],
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1
+    },
+    {
+      "id": "5771767d-c332-4568-a3f7-9365f2960e0a",
+      "name": "Transcribe a recording1",
+      "parameters": {
+        "operation": "transcribe",
+        "options": {},
+        "resource": "audio"
+      },
+      "position": [
+        1648,
+        112
+      ],
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "binaryMode": "separate",
+    "executionOrder": "v1"
+  },
+  "tags": [],
+  "versionId": "c35b67b7-08f0-4abc-93ae-86403b488bcb"
+}

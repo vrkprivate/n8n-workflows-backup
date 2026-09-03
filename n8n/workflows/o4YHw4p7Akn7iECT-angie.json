@@ -94,7 +94,13 @@
             "type": "main"
           }
         ],
-        []
+        [
+          {
+            "index": 0,
+            "node": "Send a message",
+            "type": "main"
+          }
+        ]
       ]
     },
     "Listen for incoming events": {
@@ -466,6 +472,20 @@
       "type": "n8n-nodes-base.gmailTool",
       "typeVersion": 2.2,
       "webhookId": "48dd8198-8fd5-4cfc-897c-72cbc15d319f"
+    },
+    {
+      "id": "5d5b0bd5-968e-47e9-8c6e-7f2a3e8996c2",
+      "name": "Send a message",
+      "parameters": {
+        "options": {}
+      },
+      "position": [
+        -448,
+        304
+      ],
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "webhookId": "c1550eab-9e9d-4460-8d6b-09edb4d5f7c4"
     }
   ],
   "pinData": {},
@@ -474,5 +494,5 @@
     "executionOrder": "v1"
   },
   "tags": [],
-  "versionId": "1d001233-7d6e-4520-a435-85f8bc00515d"
+  "versionId": "3b53c3c4-2a84-45f5-856f-a65c4fa77123"
 }

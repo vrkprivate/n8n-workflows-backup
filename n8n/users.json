@@ -5,5 +5,12 @@
     "id": "15604d41-bd3c-48ff-95c6-ff70b1535f41",
     "lastName": "Interest",
     "role": "global:owner"
+  },
+  {
+    "email": "vkorhale21@gmail.com",
+    "firstName": null,
+    "id": "f7934aa3-4e52-46e0-bddd-9916f30c3e2b",
+    "lastName": null,
+    "role": "global:member"
   }
 ]

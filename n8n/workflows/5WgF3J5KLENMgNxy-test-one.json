@@ -1,0 +1,56 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Get a chat",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2026-09-04T05:50:12.095Z",
+  "id": "5WgF3J5KLENMgNxy",
+  "isArchived": false,
+  "meta": null,
+  "name": "Test-One",
+  "nodeGroups": [],
+  "nodes": [
+    {
+      "id": "d19485df-535a-4a8d-bd48-13f31fff91f0",
+      "name": "When clicking ‘Execute workflow’",
+      "parameters": {},
+      "position": [
+        0,
+        0
+      ],
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1
+    },
+    {
+      "id": "7affc5a7-1ff6-47cb-b7cb-25f4ae21b512",
+      "name": "Get a chat",
+      "parameters": {
+        "resource": "chat"
+      },
+      "position": [
+        224,
+        0
+      ],
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "webhookId": "c1522ec2-fb88-49c7-b64f-41d529abac2a"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "binaryMode": "separate",
+    "executionOrder": "v1"
+  },
+  "tags": [],
+  "versionId": "dcba8b90-e167-4367-8ad4-9199478f636b"
+}

@@ -37,7 +37,7 @@
   },
   "createdAt": "2026-09-04T05:50:12.095Z",
   "id": "5WgF3J5KLENMgNxy",
-  "isArchived": false,
+  "isArchived": true,
   "meta": null,
   "name": "Test-One",
   "nodeGroups": [],
@@ -106,5 +106,5 @@
     "executionOrder": "v1"
   },
   "tags": [],
-  "versionId": "400b0fe3-6fed-4fd2-a77d-61bdb19cdf88"
+  "versionId": "30b6041c-74dc-4c32-808d-c2267102fab6"
 }

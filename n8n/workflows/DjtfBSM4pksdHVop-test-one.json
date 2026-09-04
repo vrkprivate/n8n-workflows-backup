@@ -1,0 +1,18 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2026-09-04T05:48:55.935Z",
+  "id": "DjtfBSM4pksdHVop",
+  "isArchived": false,
+  "meta": null,
+  "name": "Test/One",
+  "nodeGroups": [],
+  "nodes": [],
+  "pinData": {},
+  "settings": {
+    "binaryMode": "separate",
+    "executionOrder": "v1"
+  },
+  "tags": [],
+  "versionId": "a1f90229-06c6-4a1d-a644-128c7cb2617a"
+}

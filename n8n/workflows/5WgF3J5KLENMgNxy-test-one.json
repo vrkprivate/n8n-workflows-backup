@@ -1,6 +1,28 @@
 {
   "active": false,
   "connections": {
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "Get a chat": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "main"
+          }
+        ]
+      ]
+    },
     "When clicking ‘Execute workflow’": {
       "main": [
         [
@@ -44,6 +66,38 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "webhookId": "c1522ec2-fb88-49c7-b64f-41d529abac2a"
+    },
+    {
+      "id": "d3099f91-8afc-476a-8e55-bf9ed433e353",
+      "name": "AI Agent",
+      "parameters": {
+        "options": {}
+      },
+      "position": [
+        496,
+        0
+      ],
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1
+    },
+    {
+      "id": "e3c1494d-4e9a-4687-bbf8-31969dc561af",
+      "name": "Anthropic Chat Model",
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "cachedResultName": "Claude Sonnet 5",
+          "mode": "list",
+          "value": "claude-sonnet-5"
+        },
+        "options": {}
+      },
+      "position": [
+        368,
+        224
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.6
     }
   ],
   "pinData": {},
@@ -52,5 +106,5 @@
     "executionOrder": "v1"
   },
   "tags": [],
-  "versionId": "dcba8b90-e167-4367-8ad4-9199478f636b"
+  "versionId": "400b0fe3-6fed-4fd2-a77d-61bdb19cdf88"
 }

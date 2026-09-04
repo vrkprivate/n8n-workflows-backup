@@ -29,5 +29,18 @@
     ],
     "installedVersion": "2.1.4",
     "packageName": "@mendable/n8n-nodes-firecrawl"
+  },
+  {
+    "authorEmail": "contact@serpapi.com",
+    "authorName": "SerpApi",
+    "installedNodes": [
+      {
+        "latestVersion": 1,
+        "name": "SerpApi Official",
+        "type": "n8n-nodes-serpapi.serpApi"
+      }
+    ],
+    "installedVersion": "0.1.10",
+    "packageName": "n8n-nodes-serpapi"
   }
 ]

@@ -25,6 +25,14 @@
         "updatedAt": "2026-09-04T05:29:08.649Z"
       },
       {
+        "createdAt": "2026-09-04T12:40:53.872Z",
+        "id": "lOQ7HZeur74BnKRH",
+        "index": 3,
+        "name": "areaCon",
+        "type": "number",
+        "updatedAt": "2026-09-04T12:40:53.872Z"
+      },
+      {
         "createdAt": "2026-09-04T05:28:38.448Z",
         "id": "4Lr1Cb2pFUFeVKa6",
         "index": 0,

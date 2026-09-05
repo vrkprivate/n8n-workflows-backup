@@ -2668,28 +2668,6 @@
       "typeVersion": 1
     }
   ],
-  "pinData": {
-    "Airtable Approved Webhook": [
-      {
-        "json": {
-          "body": {
-            "ai_draft": "Thanks for reaching out! Our Pro plan starts at $49/month and includes all core features. Would you like me to set up a quick demo call?",
-            "chat_id": "R8J-xM9WX7eoHLp6gSVtWQ",
-            "record_id": "recDraftAB12345Xy",
-            "status": "approved"
-          },
-          "headers": {
-            "content-length": "187",
-            "content-type": "application/json",
-            "host": "n8n.salmanpro.me",
-            "user-agent": "node-fetch"
-          },
-          "params": {},
-          "query": {}
-        }
-      }
-    ]
-  },
   "settings": {
     "binaryMode": "separate",
     "executionOrder": "v1"

@@ -443,7 +443,7 @@
           "parse_mode": "Markdown"
         },
         "chatId": "={{ $('Listen for incoming events').first().json.message.from.id }}",
-        "text": "=glpat-okNJ1hV9p8QKmAgb3YjYm2M6MQpvOjEKdTpwMWNseg8.01.1707fjhsv"
+        "text": "=AKIAQZ7MRT4XN2LKWJ5D"
       },
       "position": [
         1296,
@@ -482,5 +482,5 @@
       "updatedAt": "2026-09-03T13:49:33.478Z"
     }
   ],
-  "versionId": "b6080c05-a15b-42bb-8854-676638307cc3"
+  "versionId": "c6be24de-3f46-4a75-9ec9-8337b4e80f0e"
 }

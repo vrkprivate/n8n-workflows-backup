@@ -11,6 +11,17 @@
           }
         ]
       ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Get many messages",
+            "type": "main"
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2026-09-05T13:34:37.599Z",
@@ -26,9 +37,7 @@
       "parameters": {
         "rule": {
           "interval": [
-            {
-              "field": "days"
-            }
+            {}
           ]
         }
       },
@@ -52,19 +61,36 @@
               "value": "loadtest-0142"
             }
           ]
-        }
+        },
+        "options": {}
       },
       "position": [
-        220,
+        224,
         0
       ],
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4
+    },
+    {
+      "id": "823f5957-5672-407d-9ca7-92016ac0f4ce",
+      "name": "Get many messages",
+      "parameters": {
+        "filters": {},
+        "operation": "getAll"
+      },
+      "position": [
+        448,
+        0
+      ],
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "webhookId": "efc2777e-9c9e-46c1-a901-0f8b0cfcab05"
     }
   ],
   "settings": {
+    "binaryMode": "separate",
     "executionOrder": "v1"
   },
   "tags": [],
-  "versionId": "e96a3e7d-a343-473b-ac1b-0c3156722e72"
+  "versionId": "7dac392f-198e-4580-98d1-e919ff8c55da"
 }

@@ -11,21 +11,10 @@
           }
         ]
       ]
-    },
-    "Set": {
-      "main": [
-        [
-          {
-            "index": 0,
-            "node": "If row exists",
-            "type": "main"
-          }
-        ]
-      ]
     }
   },
-  "createdAt": "2026-09-05T13:34:37.555Z",
-  "id": "nh4ZqMRblnLxJMAO",
+  "createdAt": "2026-09-05T13:54:24.261Z",
+  "id": "pKwNsbuD4jvN7E03",
   "isArchived": false,
   "meta": null,
   "name": "loadtest-0139",
@@ -37,7 +26,9 @@
       "parameters": {
         "rule": {
           "interval": [
-            {}
+            {
+              "field": "days"
+            }
           ]
         }
       },
@@ -61,39 +52,19 @@
               "value": "loadtest-0139"
             }
           ]
-        },
-        "options": {}
+        }
       },
       "position": [
-        224,
+        220,
         0
       ],
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4
-    },
-    {
-      "id": "f96ac995-9947-4781-a1e6-7078431799f4",
-      "name": "If row exists",
-      "parameters": {
-        "dataTableId": {
-          "__rl": true,
-          "mode": "list",
-          "value": ""
-        },
-        "operation": "rowExists"
-      },
-      "position": [
-        448,
-        0
-      ],
-      "type": "n8n-nodes-base.dataTable",
-      "typeVersion": 1.1
     }
   ],
   "settings": {
-    "binaryMode": "separate",
     "executionOrder": "v1"
   },
   "tags": [],
-  "versionId": "bea6cd19-9d03-4ac7-9482-2a002037f789"
+  "versionId": "4c62ab15-892a-4b6a-9838-a75f1b1fa442"
 }

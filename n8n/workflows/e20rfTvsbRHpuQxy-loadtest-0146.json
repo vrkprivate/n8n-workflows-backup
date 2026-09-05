@@ -11,6 +11,17 @@
           }
         ]
       ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Get a member in a chat",
+            "type": "main"
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2026-09-05T13:34:37.660Z",
@@ -26,9 +37,7 @@
       "parameters": {
         "rule": {
           "interval": [
-            {
-              "field": "days"
-            }
+            {}
           ]
         }
       },
@@ -52,19 +61,36 @@
               "value": "loadtest-0146"
             }
           ]
-        }
+        },
+        "options": {}
       },
       "position": [
-        220,
+        224,
         0
       ],
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4
+    },
+    {
+      "id": "04486124-e79c-4a39-bc75-814b34fe0fa2",
+      "name": "Get a member in a chat",
+      "parameters": {
+        "operation": "member",
+        "resource": "chat"
+      },
+      "position": [
+        448,
+        0
+      ],
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "webhookId": "f30822db-fe01-4323-a9b0-be64b6d079b0"
     }
   ],
   "settings": {
+    "binaryMode": "separate",
     "executionOrder": "v1"
   },
   "tags": [],
-  "versionId": "c7977032-c9d4-45c7-a705-40ae02df5c3f"
+  "versionId": "f74c13fe-4b82-4241-9a6c-3d1511db21ca"
 }

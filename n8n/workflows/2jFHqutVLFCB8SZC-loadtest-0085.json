@@ -1,0 +1,70 @@
+{
+  "active": false,
+  "connections": {
+    "Schedule": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Set",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2026-09-05T14:04:29.539Z",
+  "id": "2jFHqutVLFCB8SZC",
+  "isArchived": false,
+  "meta": null,
+  "name": "loadtest-0085",
+  "nodeGroups": [],
+  "nodes": [
+    {
+      "id": "n1-loadtest-0085",
+      "name": "Schedule",
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days"
+            }
+          ]
+        }
+      },
+      "position": [
+        0,
+        0
+      ],
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2
+    },
+    {
+      "id": "n2-loadtest-0085",
+      "name": "Set",
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1",
+              "name": "batch",
+              "type": "string",
+              "value": "loadtest-0085"
+            }
+          ]
+        }
+      },
+      "position": [
+        220,
+        0
+      ],
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4
+    }
+  ],
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [],
+  "versionId": "f0122d5c-0876-4ae4-809b-cdfcbaa8b5b8"
+}
